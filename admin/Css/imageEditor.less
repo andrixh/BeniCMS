@@ -1,0 +1,69 @@
+@import 'common';
+
+div.controls {display: block; position: absolute; top:8px; left:140px; .f_Tahoma; font-size:11px; width: auto;
+	div {display: block; float: left; padding:2px 0 0 0; margin: 0 5px 0 0;
+		a {padding:0}
+	}
+	a {display:block; float:left; width:16px; height: 16px; padding:2px;  .roundCorners(3px); cursor: pointer; .bgimg('imageEditor.png'); margin-right: 3px;
+		&:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 1px solid @c_Gray3; .dropShadow (0px, 3px, 3px, rgba(0,0,0,0.5)); }
+		&:hover {.bgcolor(@c_White); color:@c_Black; border: 1px solid @c_Hilight1;}
+		&:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); position: relative; top:2px; border: 1px solid; @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+	}
+	a#rotate {.bgposX(0px)}
+	a#r0 {.bgposX(-20px)}
+	a#r90 {.bgposX(-40px)}
+	a#r180 {.bgposX(-60px)}
+	a#r270 {.bgposX(-80px)}
+	a#crop {.bgposX(-100px)}
+	a#flipV {.bgposX(-120px)}
+	a#flipH {.bgposX(-140px)}
+	a#zoomIn {.bgposX(-160px)}
+	a#zoomOut {.bgposX(-180px)}
+	a#pan {.bgposX(-200px)}
+	a.selected, a.active {
+		&:link, &:visited, &:hover, &:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); position: relative; top:2px; border: 1px solid; @c_Hilight2; .bgcolor(@c_Gray4); color: @c_Black;}
+	}
+	
+	label{display: block; float: left; clear:none; width: 55px; margin:0; padding:0; line-height:normal; text-indent:0;
+		span {display: block; float: left; .f_Tahoma; font-size:11px; line-height:18px; margin: 0; padding: 0; width:10px; text-indent:0px; font-weight: normal; color:@c_Gray2}
+		input {display: block; float:left; clear:none; .controlBorder; padding:@d_controlPadding; width: 35px; font-weight:normal; margin: 0px!important;
+			&:hover, &:focus {.activeBorder}
+		}
+	}
+}
+
+div.workPlace{display: block; width:100%; margin:0; padding:0px; .bgcolor(@c_Gray2); overflow: hidden; position: relative;
+	div.scaler {display:block; width:100%; height: 100%; position: absolute}
+	div.canvas {display: block; margin:10px; padding:0;border:1px solid @c_Black; float: left; position:relative; .bgimg('transpBG.gif'); .dropShadow (0px, 2px, 6px, rgba(0,0,0,0.4));
+		&:after {content: ""; display: block; clear: both;}
+		div.image{display: block; } 	
+	}
+	div.rotateHandle, div.panHandle{display:none}
+	div.cropCover{display:block; position:absolute; top:0px; left:0px; width:0px; height:0px; .bgcolor(rgba(0,0,0,0.5));}
+	div.cropHandle {display:none; position:absolute; z-index:200; margin-left: 7px;  margin-top: 6px;}
+	div.cropArea {display:none; position:absolute;}
+}
+
+div.workPlace.rotate{
+	div.rotateHandle{display:block!important; position: absolute; top:0px; left:0px; width:100%; height: 100%; cursor: url('../Gfx/Cursors/rotate.gif'), auto;}
+}
+
+div.workPlace.pan {
+	div.panHandle{display:block!important; position: absolute; top:0px; left:0px; width:100%; height: 100%; cursor: url('../Gfx/Cursors/pan.gif'), auto; z-index: 2000;}
+}
+div.workPlace.crop{
+	div.cropHandle{display:block; position: absolute; width: 7px; height: 7px;}
+	div.cropHandlePoster{display:block; position: absolute; width: 7px; height: 7px; .bgcolor(rgba(255,255,255,0.6)); border:1px solid @c_Gray1; margin-left: 7px;  margin-top: 6px;}
+	div.cropArea {display: block; position: absolute; background:transparent; cursor: move; /* margin-top:-16px*/}
+	
+	div.cropHandle.TL, 	div.cropHandle.BR  {cursor: se-resize;  }
+	div.cropHandle.TR ,	div.cropHandle.BL  {cursor: sw-resize; }
+}
+
+/* This special bit for the duplicate option down below*/
+
+form fieldset.submit input#duplicate {clear: none; float: left; position: relative; top:8px; left:-8px}
+form fieldset.submit label span {color:@c_Gray2; cursor: pointer;
+	&:hover {color:@c_Hilight1}
+}
+

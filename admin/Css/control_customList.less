@@ -1,0 +1,20 @@
+@import 'common';
+
+fieldset.customList {margin: 0; padding-left: 0!important; font-size:13px; padding-bottom: 5px; display:block; float: none; clear: both;
+	select {margin-bottom: 5px;}
+	input {display: block; float:left; clear:none; margin-right: 3px; }
+	a {display: block; float: left; width: 18px; height: 18px; .roundCorners(3px); .bold; text-align: center; font-size:13px;
+		&:last-child {margin-left:2px;}
+		&:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 1px solid @c_Gray3; .dropShadow (0px, 2px ,2px, rgba(0,0,0,0.3));}
+		&:hover {.bgcolor(@c_White); color:@c_Black; border: 1px solid @c_Hilight1;}
+		&:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); position: relative; top:1px; border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+	}
+	:after {content:""; display: block; float: none; clear: both;}
+}
+
+fieldset.col1 fieldset.customList { width:@col1;
+	input {width:123px;}
+}
+fieldset.col2 fieldset.customList { width:@col2;
+	input {width:296px;}
+}

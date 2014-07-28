@@ -1,0 +1,167 @@
+@import 'common';
+
+@menuWidth: 200px;
+@menuWidthCollapsed: 40px;
+
+html {min-height: 100%; height:100%;}
+body {min-height: 100%; padding-left: @menuWidth;
+  &.expanded {padding-left: @menuWidthCollapsed}
+  &.full {padding-left: 0}
+}
+
+
+div#sideMenu {display:block; position:fixed; width:@menuWidth; left:0; top:0; height:100%; border-bottom: 1px solid @c_Gray4; .f_Tahoma; .bgcolor(mix(@c_Gray1,@c_Black,30)); border-right: 10px solid @c_Gray5; z-index: 200; .boxSizing(border-box);
+	a.logo {display:block; background-image:url(@BrandLogoLarge); width: 100%; height: 0; background-color: @c_White; .bgsize(contain); padding-bottom: 40%; .no-repeat; .bgpos(center, center)}
+	div.logoutZone {display:block; .f_verdana; padding: 4px; font-size:10px; color:@c_Gray5; text-align:right; margin:0;  text-align: right; .bgcolor(@c_Gray1);
+		p {font-size: 10px; color:@c_Gray5; margin:0; padding: 0;}
+		strong {color:@c_White; @bold}
+		a {display:inline; color:@c_White;  height:12px; .f_Tahoma; font-size:11px;
+          +a {margin-left:10px;}
+			:hover, :active {border-bottom:1px @c_White solid;}
+		}
+	}
+
+    div.handle {display: block; position: absolute; background-color: @c_Gray4; border:1px solid @c_Gray3; border-color: @c_Gray5 @c_Gray4 @c_Gray2 @c_Gray4; width: 10px; height: 150px; top:50%; margin-top: -75px; right: -11px; cursor: pointer;
+      &:before {content:""; display: block; width: 1px; border-left: 5px dotted @c_White; height: 125px; top: 11px; left: 2px; position: absolute}
+      &:after {content:""; display: block; width: 1px; border-left: 5px dotted @c_Gray3; height: 125px; top: 10px; left: 2px; position: absolute}
+    }
+
+    nav {background-color: @c_Gray1;
+      a {display: block; color: @c_Gray5;
+        &:link, &:visited {background-color: transparent; color: @c_Gray5}
+        &:hover, &:active, &.selected {background-color: fade(@c_White,20); color: @c_Gray5}
+      }
+      >ul { color: @c_White; box-sizing: border-box;
+        >li {display: block; position: relative; width: 100%; max-height: 33px; overflow: hidden; font-size: 16px;
+          &:after {content:""; display: block; position:absolute; width: 0; height: 0; top: 13px; right:6px; background-color: transparent; border-bottom: 6px solid @c_Gray5; border-left: 4px transparent solid; border-right: 4px transparent solid; border-top: 0px transparent solid; }
+          >a {display:block; border-top: 1px solid @c_Gray2; background-color: mix(@c_Gray2,@c_Gray1,50); border-bottom: 1px solid @c_Black ;padding: 5px; text-indent: 28px; position: relative;
+            &:before {content:""; display: block; position:absolute; .bgimg('icons_menu.png'); .no-repeat; width: 23px; height: 23px; top:5px; left: 5px;}
+          }
+          &[key="users"] {>a:before {.bgposY(0px)}}
+          &[key="configuration"] {>a:before {.bgposY(-23px)}}
+          &[key="architecture"] {>a:before {.bgposY(-46px)}}
+          &[key="resources"] {>a:before {.bgposY(-69px)}}
+          &[key="contents"] {>a:before {.bgposY(-92px)}}
+          &[key="components"] {>a:before {.bgposY(-115px)}}
+          &.expanded {max-height: none; background-color: fade(@c_White,20); overflow: visible;
+            &:after{border-bottom: 0px solid transparent; border-top: 6px solid @c_Gray5;}
+            >a { }
+          }
+          &.selected{background-color: mix(@c_Gray2,@c_Gray1,50);
+
+          }
+          >ul {font-size: 13px;
+            >li{position: relative; border-bottom: 1px solid mix(@c_Black,@c_Gray1,50);
+              >a{padding: 3px 5px}
+              >a.add {display: block; width: 14px; height: 14px; .hideText(); background-color: @c_Gray3; position: absolute; top: 5px; right: 6px; padding: 0; margin: 0; .roundCorners(2px);
+                &:link, &:visited {.bgcolor(@c_Gray3)}
+                &:hover, &:active {.bgcolor(@c_Gray5)}
+                &:before, &:after {content: "";display: block; position: absolute; background-color: @c_Gray1; }
+                &:before {width: 10px; height: 2px; top:6px; left: 2px }
+                &:after {width: 2px; height: 10px; top:2px; left: 6px }
+
+
+              }
+              >ul {
+                >li {
+                  >a {display:block; padding: 3px 5px 3px 15px; border-top: 1px solid  mix(@c_Gray1,@c_Gray2,50);}
+                }
+                &.add {display: block; position: absolute; width: 14px; height: 14px; overflow: hidden; background-color: @c_Gray3; top: 5px; right: 6px; padding: 0; margin: 0; .roundCorners(2px); white-space: nowrap;
+                  >li {display: none;}
+                  &:before, &:after {content: "";display: block; position: absolute; background-color: @c_Gray1; }
+                  &:before {width: 10px; height: 2px; top:6px; left: 2px }
+                  &:after {width: 2px; height: 10px; top:2px; left: 6px }
+
+                  &:hover {overflow:visible; width: auto; height: auto; top:5px; left: (@menuWidth - 16px); right: auto; z-index: 200000; .roundCorners(0); background-color: @c_Gray3;
+                    &:before {display: block; position: absolute; width: 14px; height: 14px; overflow: hidden; background-color: @c_Gray3; top: 0px; left: -14px; padding: 0; margin: 0; .roundCorners(2px  0 0 2px);}
+                    &:after {content:""; display: block; position:absolute; width: 0; height: 0; top: 2px; right:auto; left: -10px; background-color: transparent; border-left: 10px solid @c_Gray1; border-top: 5px transparent solid; border-bottom: 5px transparent solid; border-right: 0px transparent solid; }
+                    >li {display: block;
+                      >a {}
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+        }
+
+      }
+    }
+}
+
+body.expanded div#sideMenu{width:@menuWidthCollapsed; border-right: 7px solid @c_Gray5;
+  a.logo {display:block; background-image:url(@BrandLogoSmall); width: 117%; padding-bottom: 117%; }
+  div.logoutZone {display:none;}
+
+  div.handle {display: block; position: absolute; background-color: @c_Gray4; border:1px solid @c_Gray3; border-color: @c_Gray5 @c_Gray4 @c_Gray2 @c_Gray4; width: 7px; height: 150px; top:50%; margin-top: -75px; right: -8px; cursor: pointer;
+    &:before {content:""; display: block; width: 1px; border-left: 5px dotted @c_White; height: 125px; top: 11px; left: 1px; position: absolute}
+    &:after {content:""; display: block; width: 1px; border-left: 5px dotted @c_Gray3; height: 125px; top: 10px; left: 1px; position: absolute}
+  }
+
+  nav {background-color: @c_Gray1;
+    a {display: block; color: @c_Gray5;
+      &:link, &:visited {background-color: transparent; color: @c_Gray5}
+      &:hover, &:active, &.selected {background-color: fade(@c_White,20); color: @c_Gray5}
+    }
+    >ul { color: @c_White; box-sizing: border-box;
+      >li {display: block; position: relative; width: 100%; height: 33px; overflow: visible; font-size: 16px;
+        &:after {display: none; }
+        >a {display:block; border-top: 1px solid @c_Gray2; background-color: mix(@c_Gray2,@c_Gray1,50); border-bottom: 1px solid @c_Black ;padding: 5px; text-indent: 28px; position: relative; .hideText;
+          &:before {content:""; display: block; position:absolute; .bgimg('icons_menu.png'); .no-repeat; width: 23px; height: 23px; top:5px; left: 5px;}
+        }
+        &[key="users"] {>a:before {.bgposY(0px)}}
+        &[key="configuration"] {>a:before {.bgposY(-23px)}}
+        &[key="architecture"] {>a:before {.bgposY(-46px)}}
+        &[key="resources"] {>a:before {.bgposY(-69px)}}
+        &[key="contents"] {>a:before {.bgposY(-92px)}}
+        &[key="components"] {>a:before {.bgposY(-115px)}}
+        &.selected{background-color: mix(@c_Gray2,@c_Gray1,50);}
+
+        &:hover{background-color: mix(@c_Gray2,@c_Gray1,50);
+          >a {display: block; text-indent: @menuWidthCollapsed - 10px; position: absolute; width: @menuWidth + @menuWidthCollapsed - 8px; background-color: @c_Gray1 }
+          >ul {display: block; top:33px;}
+        }
+
+        >ul {display:none; font-size: 13px; position: absolute; left: 32px; top: 0;background-color: @c_Gray1; white-space: nowrap;
+
+          >li{position: relative; border-bottom: 1px solid mix(@c_Black,@c_Gray1,50);
+            >a{padding: 3px 5px; min-width: @menuWidth;}
+            >a.add {display: block; width: 14px; min-width: 14px; height: 14px; .hideText(); background-color: @c_Gray3; position: absolute; top: 5px; right: 6px; padding: 0; margin: 0; .roundCorners(2px);
+              &:link, &:visited {.bgcolor(@c_Gray3)}
+              &:hover, &:active {.bgcolor(@c_Gray5)}
+              &:before, &:after {content: "";display: block; position: absolute; background-color: @c_Gray1; }
+              &:before {width: 10px; height: 2px; top:6px; left: 2px }
+              &:after {width: 2px; height: 10px; top:2px; left: 6px }
+
+
+            }
+            >ul {
+              >li {
+                >a {display:block; padding: 3px 5px 3px 15px; border-top: 1px solid  mix(@c_Gray1,@c_Gray2,50);}
+              }
+              &.add {display: block; position: absolute; width: 14px; height: 14px; overflow: hidden; background-color: @c_Gray3; top: 5px; right: 6px; padding: 0; margin: 0; .roundCorners(2px); white-space: nowrap;
+                >li {display: none;}
+                &:before, &:after {content: "";display: block; position: absolute; background-color: @c_Gray1; }
+                &:before {width: 10px; height: 2px; top:6px; left: 2px }
+                &:after {width: 2px; height: 10px; top:2px; left: 6px }
+
+                &:hover {overflow:visible; width: auto; height: auto; top:5px; left: (@menuWidth + 4px); right: auto; z-index: 200000; .roundCorners(0); background-color: @c_Gray3;
+                  &:before {display: block; position: absolute; width: 14px; height: 14px; overflow: hidden; background-color: @c_Gray3; top: 0px; left: -14px; padding: 0; margin: 0; .roundCorners(2px  0 0 2px);}
+                  &:after {content:""; display: block; position:absolute; width: 0; height: 0; top: 2px; right:auto; left: -10px; background-color: transparent; border-left: 10px solid @c_Gray1; border-top: 5px transparent solid; border-bottom: 5px transparent solid; border-right: 0px transparent solid; }
+                  >li {display: block;
+                    >a {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+body > h1 {.f_Tahoma; font-size: 18px; line-height:37px; .bold; text-indent:@w_gutter/2; margin:0; color:@c_Hilight1; border-bottom: 1px solid @c_Gray4; padding-bottom: 2px; position: relative; .bgposY(-4px); .bgcolor(@c_White); .dropShadow (0px, 2px, 2px, fade(@c_Black,20));  .textShadow (0px, 1px, 0px, @c_White); }
+.hidden {display: none}

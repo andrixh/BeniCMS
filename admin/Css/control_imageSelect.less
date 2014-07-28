@@ -1,0 +1,10 @@
+@import 'common';
+
+ul.imageSelect {display:block; padding:@d_controlPadding; .controlBorder; clear: both; overflow-y:scroll; min-height: 70px; max-height:280px; .bgcolor(@c_White); position:relative;
+	li {display:block; float:left; padding: 4px; cursor: pointer; position:relative;
+		img {display:block}
+		&:hover {margin:0px; padding:1px; border: @c_Hilight1 3px solid;}
+		&.selected {margin:0px; padding:1px; border: @c_Hilight3 3px solid;}
+	}
+	&:hover {border-color:@c_Hilight1}
+}

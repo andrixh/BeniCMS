@@ -1,0 +1,261 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background-color: #FFFFFF;
+}
+ul.fieldList {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  clear: both;
+  font-size: 13px;
+}
+ul.fieldList:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ul.fieldList li {
+  display: block;
+  float: none;
+  clear: both;
+  padding-bottom: 2px;
+  padding-top: 0px;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin-bottom: 5px;
+  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+  cursor: move;
+}
+ul.fieldList li:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ul.fieldList li a.close,
+ul.fieldList li a.dragHandle {
+  display: none;
+}
+ul.fieldList li fieldset.first {
+  padding-left: 0px !important;
+  margin-left: 0px !important;
+  clear: both;
+}
+ul.fieldList li fieldset {
+  display: block;
+  float: left;
+  margin-top: 3px;
+}
+ul.fieldList li fieldset label {
+  display: block;
+  float: none;
+  width: 130px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  margin-left: 7.5px;
+  float: left;
+}
+ul.fieldList li fieldset label input[type=text] {
+  display: block;
+  width: 126px;
+  padding: 2px;
+}
+ul.fieldList li fieldset fieldset.customList {
+  margin: 0;
+  padding-left: 0 !important;
+  padding-top: 5px;
+}
+ul.fieldList li fieldset fieldset.customList select {
+  margin-bottom: 5px;
+}
+ul.fieldList li fieldset fieldset.customList input {
+  display: block;
+  float: left;
+  clear: none;
+  width: 70px;
+  margin-right: 3px;
+}
+ul.fieldList li fieldset a.tool {
+  text-indent: -99999px;
+  display: block;
+  margin: 18px 0px 0px 1px;
+  float: left;
+  width: 23px;
+  height: 23px;
+  font-weight: bold;
+  font-size: 0px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  text-align: center;
+  background-image: url("/admin/Gfx/pageSchemeToolbar.png");
+  -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+}
+ul.fieldList li fieldset a.tool:link,
+ul.fieldList li fieldset a.tool:visited {
+  color: #969696;
+  border: 1px solid #969696;
+  background-color: #f0f0f0;
+}
+ul.fieldList li fieldset a.tool:hover {
+  color: #969696;
+  border: 1px solid #8ebe2c;
+  background-color: #FFFFFF;
+}
+ul.fieldList li fieldset a.tool:active,
+ul.fieldList li fieldset a.tool.on {
+  color: #000000;
+  background-color: #c8c8c8;
+  border: 1px solid ;
+  position: relative;
+  top: 1px;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0);
+}
+ul.fieldList li fieldset a.tool.visibility {
+  margin-left: 6px;
+  margin-right: 6px;
+  background-position: -23px 0px;
+}
+ul.fieldList li fieldset a.tool.visibility.on {
+  background-position: 0px 0px;
+}
+ul.fieldList li fieldset a.tool.lock_admin {
+  background-position: -69px 0px;
+}
+ul.fieldList li fieldset a.tool.lock_user {
+  background-position: -46px 0px;
+}
+ul.fieldList li fieldset.options {
+  background-color: #e0e0e0;
+  -moz-box-shadow: inset 0px 1px 3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: inset 0px 1px 3px rgba(0,0,0,0.2);
+  float: none;
+  clear: both;
+  margin: 4px;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  display: none;
+  width: auto;
+  background-color: rgba(0,0,0,0.05);
+}
+ul.fieldList li fieldset.options label {
+  margin: 2px 4px;
+  width: auto;
+}
+ul.fieldList li.selected fieldset.options {
+  display: block;
+}
+ul.fieldList li:hover {
+  background-color: #ebf7d4;
+}
+ul.fieldList li:hover a.close {
+  display: block;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  text-align: center;
+  opacity: 0.5;
+  color: #969696;
+  border: 1px solid #969696;
+  cursor: pointer;
+  line-height: 13px;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  z-index: 200;
+}
+ul.fieldList li:hover a.close:hover {
+  opacity: 1;
+  color: #969696;
+  border: 1px solid #8ebe2c;
+}
+ul.fieldList li:hover a.close:active {
+  opacity: 1;
+  color: #000000;
+  background-color: #c8c8c8;
+  border: 1px solid ;
+  top: 3px;
+}
+ul.fieldList li:hover a.close:after {
+  content: "x";
+  position: absolute;
+  left: 4px;
+}
+ul.fieldList li.ui-sortable-helper {
+  border: 1px solid #8ebe2c;
+  -moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+  padding-top: 6px;
+}
+a.addField {
+  display: block;
+  float: right;
+  width: auto;
+  padding: 4px 14px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+a.addField:link,
+a.addField:visited {
+  background-color: #f0f0f0;
+  color: #606060;
+  border: 1px solid #969696;
+  -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  margin-right: 10px;
+}
+a.addField:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid #8ebe2c;
+}
+a.addField:active {
+  -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  position: relative;
+  top: 2px;
+  border: 1px solid #6a901d;
+  background-color: #e0e0e0;
+  color: #000000;
+}

@@ -1,0 +1,112 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background-color: #FFFFFF;
+}
+fieldset.contentViews ul.tabs {
+  display: block;
+  position: relative;
+  background-color: #e0e0e0;
+  display: inline-block;
+  width: 100%;
+}
+fieldset.contentViews ul.tabs .btn {
+  display: block;
+  float: left;
+  padding: 2px;
+  width: 10px;
+  height: 10px;
+  font-size: 12px;
+  line-height: 8px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+fieldset.contentViews ul.tabs .btn:link,
+fieldset.contentViews ul.tabs .btn:visited {
+  background-color: #969696;
+  color: #FFFFFF;
+}
+fieldset.contentViews ul.tabs .btn:hover,
+fieldset.contentViews ul.tabs .btn:active {
+  background-color: #6a901d;
+  color: #FFFFFF;
+}
+fieldset.contentViews ul.tabs a.add {
+  margin: 8px 3px 2px 3px;
+}
+fieldset.contentViews ul.tabs li {
+  display: block;
+  float: left;
+  position: relative;
+  width: auto;
+  padding: 3px;
+  background-color: #f0f0f0;
+  margin-bottom: 3px;
+  border: 1px solid #c8c8c8;
+  border-top-width: 0;
+}
+fieldset.contentViews ul.tabs li:first-child {
+  margin-left: 2px;
+}
+fieldset.contentViews ul.tabs li:first-child a.title:link,
+fieldset.contentViews ul.tabs li:first-child a.title:visited,
+fieldset.contentViews ul.tabs li:first-child a.title:hover,
+fieldset.contentViews ul.tabs li:first-child a.title:active {
+  color: #303030 !important;
+}
+fieldset.contentViews ul.tabs li.selected {
+  background-color: #FFFFFF;
+}
+fieldset.contentViews ul.tabs li.selected a.title:hover,
+fieldset.contentViews ul.tabs li.selected a.title:active {
+  color: #000000;
+}
+fieldset.contentViews ul.tabs li a {
+  display: block;
+  float: left;
+}
+fieldset.contentViews ul.tabs li a.delete {
+  display: none;
+}
+fieldset.contentViews ul.tabs li a.title:link,
+fieldset.contentViews ul.tabs li a.title:visited,
+fieldset.contentViews ul.tabs li a.title:hover,
+fieldset.contentViews ul.tabs li a.title:active {
+  color: #303030;
+}
+fieldset.contentViews ul.tabs li input {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 4px;
+}
+fieldset.contentViews ul.tabs li input.labeller {
+  display: block;
+  font-size: 12px;
+  padding: 1px;
+  float: left;
+}
+fieldset.contentViews ul.tabs li.selected {
+  top: 1px;
+}
+fieldset.contentViews ul.tabs li.selected a.delete {
+  display: block;
+}
+fieldset.contentViews ul.tabs li a.delete {
+  margin-left: 3px;
+}

@@ -1,0 +1,38 @@
+@import 'common';
+
+fieldset.contentViews {
+  ul.tabs {display: block; position: relative; background-color: @c_Gray5; .clearfix; width: 100%;
+    .btn {display: block; float: left;  padding:2px; width: 10px; height: 10px; font-size: 12px; line-height: 8px; font-weight: bold; font-weight: bold; border-radius: 3px;
+      &:link, &:visited {background-color: @c_Gray3; color: @c_White;}
+      &:hover, &:active {background-color: @c_Hilight2; color: @c_White;}
+    }
+
+    a.add {margin: 8px 3px 2px 3px;}
+
+    li {display: block; float: left; position: relative; width: auto; padding: 3px; background-color: @c_Gray6; margin-bottom: 3px; border: 1px solid @c_Gray4; border-top-width: 0;
+      &:first-child{margin-left: 2px;
+        a.title {
+          &:link, &:visited, &:hover, &:active {color: @c_Gray1!important;}
+        }
+      }
+      &.selected {background-color: @c_White;
+        a.title {
+          &:hover, &:active {color: @c_Black;}
+        }
+      }
+      a {display: block; float: left}
+      a.delete {display: none}
+      a.title {
+        &:link, &:visited, &:hover, &:active {color: @c_Gray1}
+      }
+      input {display: block; position: relative; width: 100%; padding-top: 4px;}
+      input.labeller{display: block; font-size:12px; padding:1px; float: left; }
+      &.selected { top:1px;
+        a.delete {display: block;}
+      }
+
+      a.delete {margin-left: 3px; }
+    }
+
+  }
+}

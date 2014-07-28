@@ -1,0 +1,25 @@
+@import 'common';
+@import 'forms';
+
+div.overlay {.bgcolor(fade(@c_Black,30)); position: fixed; width: 100%; height:100%; top: 0px; left: 0px; display: block; z-index:12000;
+	&.hidden {width:0px; height:0px; display:none;}
+}
+
+.dialog {display: block; position:fixed; .bgcolor(@c_Gray7); .roundCorners(6px); z-index:12100; .dropShadow(0px, 0px, 10px, fade(@c_Black,70)); width:auto; overflow:hidden;
+	p {font-size:12px;}
+	form, a {display: block;}
+	h2 {display: block; margin:0 0 4px 0; padding:6px 10px; .bgcolor(@c_White); color:@c_Hilight1; .f_Tahoma; .bold; font-size: 20px; .roundCornersTL(6px); .roundCornersTR(6px);  .dropShadow(0px, 2px, 2px, fade(@c_Black,20)); cursor: move;}
+	form {padding:0; margin:0px 0px; .bgcolor(@c_Gray7);
+		fieldset {margin:0 0 10px 0; padding:0 10px;
+			label {}
+			input,textarea {margin-top: 5px; .bgcolor(@c_White)}
+		}
+		fieldset.submit {text-align: right;
+			label {float:left; display:inline-block;
+				a {margin:0;}
+			}
+		}
+	}
+	.working {display:block; position:absolute; top:0px; left:0px; height:100%; width:100%; .bgcolor(fade(@c_Black,30)); .bgimg('working.gif'); .bgpos(center,center); .no-repeat;}
+	.working.hidden {display:none}
+}

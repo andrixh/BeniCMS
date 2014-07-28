@@ -1,0 +1,26 @@
+<?php
+return
+[
+    'BG'=>['locale'=>'bg_BG','desc'=>'Bulgarian','name'=>'български','flag'=>'BG'],
+    'CS'=>['locale'=>'cs_CZ','desc'=>'Czech','name'=>'čeština','flag'=>'CS'],
+    'DA'=>['locale'=>'da_DK','desc'=>'Danish','name'=>'dansk','flag'=>'DA'],
+    'DE'=>['locale'=>'de_DE','desc'=>'German','name'=>'Deutsch','flag'=>'DE'],
+    'EL'=>['locale'=>'el_GR','desc'=>'Greek','name'=>'ελληνικά','flag'=>'EL'],
+    'EN'=>['locale'=>'en_US','desc'=>'English','name'=>'english','flag'=>'EN'],
+    'ES'=>['locale'=>'es_ES','desc'=>'Spanish','name'=>'español','flag'=>'ES'],
+    'FI'=>['locale'=>'fi_FI','desc'=>'Finnish','name'=>'suomi','flag'=>'FI'],
+    'FR'=>['locale'=>'fr_FR','desc'=>'French','name'=>'français','flag'=>'FR'],
+    'HR'=>['locale'=>'hr_HR','desc'=>'Croatian','name'=>'Hrvatski','flag'=>'HR'],
+    'HU'=>['locale'=>'hu_HU','desc'=>'Hungarian','name'=>'magyar','flag'=>'HU'],
+    'IT'=>['locale'=>'it_UT','desc'=>'Italian','name'=>'italiano','flag'=>'IT'],
+    'MK'=>['locale'=>'mk_MK','desc'=>'Macedonian','name'=>'македонски','flag'=>'MK'],
+    'PT'=>['locale'=>'pt_PT','desc'=>'Portuguese','name'=>'português','flag'=>'PT'],
+    'RO'=>['locale'=>'ro_RO','desc'=>'Romanian','name'=>'român','flag'=>'RO'],
+    'RU'=>['locale'=>'ru_RU','desc'=>'Russian','name'=>'Русский язык','flag'=>'RU'],
+    'SK'=>['locale'=>'sk_SK','desc'=>'Slovak','name'=>'slovenčina','flag'=>'SK'],
+    'SL'=>['locale'=>'sl_SI','desc'=>'Slovenian','name'=>'slovenščina','flag'=>'SL'],
+    'SQ'=>['locale'=>'sq_AL','desc'=>'Albanian','name'=>'shqip','flag'=>'SQ'],
+    'SR'=>['locale'=>'sr_RS','desc'=>'Serbian','name'=>'српски','flag'=>'SR'],
+    'TR'=>['locale'=>'tr_TR','desc'=>'Turkish','name'=>'Türkçe','flag'=>'TR'],
+    'UK'=>['locale'=>'uk_UA','desc'=>'Ukrainian','name'=>'Українська','flag'=>'UK'],
+];

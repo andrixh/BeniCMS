@@ -1,0 +1,24 @@
+Options -Indexes
+
+Options +FollowSymlinks
+
+RewriteEngine on
+
+#RewriteBase /
+
+RewriteRule ^(Admin)(.*)$ admin$2 [NC]
+RewriteRule ^(admin)$ admin/[NC,L]
+RewriteRule ^(admin)(.*)$ $1$2 [NC,L,QSA]
+
+#RewriteRule ^(.*)\.(css|js|png|jpg|gif|ico|htm|html|php|eot|woff|ttf)$ $1.$2 [NC,L,QSA]
+
+#RewriteRule ^(.*)$ index.php?r=$1 [NC,L,QSA]
+
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|eot|woff|ttf|svg)$">
+Header set Cache-Control "max-age=29030400, public"
+Header set Pragma "public"
+</FilesMatch>
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)(/?)$ index.php [NC,L,QSA]
+

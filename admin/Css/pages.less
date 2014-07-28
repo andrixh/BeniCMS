@@ -1,0 +1,15 @@
+@import 'common';
+
+ul.pageTypes {display:block; .f_Tahoma; margin:@w_colGutter;
+	li {display: block; float:none; clear: both; margin-bottom:8px;
+		a {display:block; width:@w_col1; padding:4px 14px 4px 4px;  .roundCorners(3px); cursor: pointer;  min-height:48px;
+			img {display: block; float:left; padding-right:10px; padding-bottom:4px;}
+			&:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 2px solid @c_Gray3; .dropShadow (0px, 3px, 3px, rgba(0,0,0,0.5)); margin-right: 10px;}
+			&:hover {.bgcolor(@c_White); color:@c_Black; border: 2px solid @c_Hilight1;}
+			&:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); position: relative; top:2px; border: 2px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+			span {display: block; font-size: 15px; margin-top:3px; margin-bottom: 3px;  .bold}
+			em {display: block; font-size: 12px; font-weight:normal; margin-top:3px; margin-bottom: 3px;}
+		}
+		a.shy {opacity:0.5}
+	}
+}

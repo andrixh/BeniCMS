@@ -1,0 +1,109 @@
+form {.bgcolor(@c_White);
+	&:after {content:""; display: block; clear:both;}
+	.colfieldset() {display:block; float:left; /*@bgcolor(#f6f6f6);*/  position: relative;  margin-right:@w_colGutter; margin-left:@w_colGutter; margin-bottom:@w_colGutter/2; .f_Tahoma;
+		> h2 {font-size: 15px; .bold; margin-top:10px; margin-bottom:10px;color:@c_Hilight1; border-bottom: 1px solid @c_Hilight1}
+	}
+	fieldset.col1 {width:@w_col1; .colfieldset} 
+	fieldset.col2 {width:@w_col2; .colfieldset}
+	fieldset.first {clear:both; /*margin-left: @w_gutter/2*/}
+	fieldset.hidden {display:none!important}
+	
+	fieldset.submit {.colfieldset; margin:0; display: block; clear: both; float: none; .bgcolor(@c_White); .dropShadow (0px, -2px, 2px, fade(@c_Black,20)); padding-left: @w_gutter/2;
+		input[type=submit]{width:auto; .bgcolor(@c_Gray6); color:@c_Gray2; padding:4px 14px; border: 2px solid @c_Gray3; .roundCorners(3px); cursor: pointer; .dropShadow (0px, 3px, 3px, fade(@c_Black,50));
+			&:focus, &:hover {.bgcolor(@c_White); color:@c_Black; border: 2px solid @c_Hilight1;}
+			&:active {.dropShadow (0px, 2px, 3px, fade(@c_Black,0)); position: relative; top:2px; border: 2px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+		}
+		label {display: block; float: left; clear: none; width: auto;
+			span{float: left; clear: none; color: @c_Gray4; padding: 0px 10px 0 0; line-height: 30px;}
+			select {float: left; clear: none; width: auto; opacity:0.5; margin-top: 5px;}
+		}
+	}
+	fieldset.submit.simple {.bgcolor(@c_Gray7);  .dropShadow (0px, 0px, 0px, fade(@c_Black,0)); padding-top: 0px; padding-bottom:15px; margin-top:0px;
+		label {margin:0; padding: 0;}
+	}
+
+	> fieldset > label {display:block; clear:both; width:100%; margin-bottom: 7px; margin-top:10px; .f_Tahoma; position:relative; .f_Tahoma; font-size:13px; line-height:13px; min-height:13px;
+        &.disabled {
+
+        }
+		span.label {display:block; display:block; float: left;  margin-bottom: 3px; margin-right: 6px}
+		span.description {display:block; color:@c_Gray2; font-size:10px; float:left; line-height:15px;}
+		span.errorHolder {display:block; clear:both; position: relative; height:0px; width:100%; overflow:visible; }
+		span.formError {.bgimg('formError.png'); .no-repeat; display:block; width:12px; height:12px; float:right; position:absolute; top:2px; right:-17px; cursor:pointer;}
+		span.formError span {text-align:left; font-weight:normal; font-size:11px; width:auto; .bgcolor(@c_Warning1); padding:3px; color:@c_Warning3; .roundCorners(3px); .dropShadow (0px, 1px, 1px, fade(@c_Black,50));  display:block; position:absolute; top:-5px; left:18px; z-index:200; white-space:pre}
+		
+		fieldset > div {.bgcolor(@c_White)}
+	}
+
+	> fieldset > label.disabled {cursor: not-allowed; opacity: 0.4;
+		* {cursor: not-allowed !important;}
+		textarea, input[type=text],input[type=number],input[type=email],input[type=password] {.disabledBorder; .bgColor(@c_Gray6);
+			&:hover, &:focus {.disabledBorder;}
+		}
+	}
+
+	fieldset.thin { margin-bottom:0px; }
+	fieldset > h2.thin {margin-bottom:0px;}
+	
+	textarea { .controlBorder; padding:@d_controlPadding;
+		&:hover, &:focus {.activeBorder}	
+	}
+	
+	div.CodeMirror { .controlBorder; padding:@d_controlPadding; clear:both; .bgcolor(@c_White); cursor: text;
+		&:hover, &:focus {.activeBorder}	
+	}
+	
+	input[type=checkbox] {display:block; float:left; margin-top:1px; margin-right:5px; clear: both; cursor: pointer;
+		&:hover + span.label, &:focus+span.label {color:@c_Hilight2;}
+	}
+	input[type=checkbox] + span.label + span.description, input[type=checkbox] + span.label + span.errorHolder + span.description {clear:both; float: none}
+	input[type=checkbox] + span.label + span.errorHolder {display:block; clear:none; float: left; position: relative; width:0px;
+		span.formEror {position:relative; top:0px; left:0px}
+	}
+	
+	input[type=text],input[type=number],input[type=email],input[type=password] {display: block; clear: both; .controlBorder; padding:@d_controlPadding;
+		&:hover, &:focus {.activeBorder}
+	}
+	
+	input[type=file] {display: block; clear: both; .controlBorder; padding:@d_controlPadding; width: 100%;
+		&:hover, &:focus {.activeBorder}
+	}
+	
+	input.datePicker {.bgimg('calendar.png'); .bgpos(right,center); .no-repeat; cursor:pointer;}
+	
+	select{display:block; clear:both; .controlBorder; width: 100%;
+		option[selected=selected]{.bold;}
+		option.inset0 {text-indent:0px;}
+		option.inset1 {text-indent:10px;}
+		option.inset2 {text-indent:20px;}
+		option.inset3 {text-indent:30px;}
+		option.inset4 {text-indent:40px;}
+		option.inset5 {text-indent:50px;}
+		option.inset6 {text-indent:60px;}
+		option.inset7 {text-indent:70px;}
+		option.inset8 {text-indent:80px;}
+		option.inset9 {text-indent:90px;}
+		option.inset10 {text-indent:100px;}
+	}
+	
+	fieldset.col1 {
+		textarea {width:@w_col1 - @d_controlPadding*2; min-width:@w_col1 - @d_controlPadding*2; max-width: @w_col1 - @d_controlPadding*2;}
+		input[type=text],input[type=number],input[type=email],input[type=password] {width:@w_col1 - @d_controlPadding*2;}
+		div.CodeMirror {width:@w_col1 - @d_controlPadding*2;}
+	}
+	fieldset.col2 {
+		textarea {width:@w_col1 - @d_controlPadding*2; min-width:@w_col2 - @d_controlPadding*2; max-width: @w_col2 - @d_controlPadding*2;}
+		input[type=text],input[type=number],input[type=email],input[type=password] {width:@w_col2 - @d_controlPadding*2;}
+		div.CodeMirror {width:@w_col2 - @d_controlPadding*2;}
+	}
+	
+	iframe.upload {display: block; border: none; width: 100%; height: 0px; margin-bottom: 3px; .dropShadow (0px, 2px, 2px, fade(@c_Black,20));}
+	
+	a.formButton {display:block; float:left; width:auto;  padding:4px 14px;  .roundCorners(3px); cursor: pointer;  font-size: 13px; height: 20px; line-height: 20px;
+		&:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 2px solid @c_Gray3; .dropShadow (0px, 3px, 3px, fade(@c_Black,50)); margin-right: 10px;}
+		&:hover {.bgcolor(@c_White); color:@c_Black; border: 2px solid @c_Hilight1;}
+		&:active {.dropShadow (0px, 2px, 3px, fade(@c_Black,0)); position: relative; top:2px; border: 2px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+	}
+
+	p {text-indent:0px;}
+}

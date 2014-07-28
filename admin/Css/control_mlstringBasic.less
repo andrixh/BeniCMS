@@ -1,0 +1,48 @@
+@import 'common';
+
+fieldset.mlstring, fieldset.mlHtml {display: block; clear: both; width: 100%; position: relative; margin-bottom: 23px;
+	&:after {content:""; display: block; clear: both;}
+	.hidden{display:none}
+	div.languageTabs {display: block; position: absolute; left: 5px; bottom: -18px; .bgcolor(transparent);
+		a {display: block; float: left; border-style: none solid solid solid; border-width:1px; border-color: @c_Gray3; padding:2px 3px 3px 3px; margin: 0px 0px 0px -1px; .roundCornersBL(2px); .roundCornersBR(2px); .bgcolor(@c_Gray6);  .dropShadow(0px, 1px, 1px, fade(@c_Black,10)); position: relative; 
+			&:hover {.bgcolor(@c_White); border-color:@c_Gray3;}
+			img{display: block}
+		}
+		a.selected {padding:3px 3px 3px 3px; border-width:1px; border-color: @c_Hilight1; .bgcolor(@c_White); position:relative; top:-1px;  .dropShadow(0px, 2px, 1px, fade(@c_Black,10)); background-image: none!important;
+			img {opacity:1!important}
+		}
+		a.empty {background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAERJREFUeNpiZmBgYARiCSDWAOJ/QPyVASpgAqVBChhZgIQMED8B4tdAzATEosxQLe+gAiIgRSDlbAwQABKQAuJnAAEGAJnGB+CZqG3PAAAAAElFTkSuQmCC);
+			img {opacity :0.4}
+		}		
+		a.selected.readonly:after {opacity:1}
+	}
+	div.dropZone{display: none}
+}
+
+fieldset.mlHtml.accepting{
+	div.dropZone{display:block; position: absolute; width: 100%; outline:3px solid @c_Hilight1; height: 450px; background:none; top:28px; z-index: 5000; cursor:pointer;}
+}
+
+fieldset.col1 {
+	fieldset.mlHtml.accepting{
+		div.dropZone{height:300px;}
+	}
+}
+
+div.overlay {.bgcolor(rgba(0,0,0,0.6)); position: fixed; width: 100%; top: 0px; left: 0px; display: block; z-index:12000;}
+
+div.dialog {display: block; position:fixed; .bgcolor(@c_Gray7); .roundCorners(6px); z-index:12100; .dropShadow(0px, 0px, 10px, fade(@c_Black,70)); width:auto; 
+	form {display: block;}
+	h2 {display: block; margin:0 0 4px 0; padding:6px 10px; .bgcolor(@c_White); color:@c_Hilight1; .f_Tahoma; .bold; font-size: 20px; .roundCornersTL(6px); .roundCornersTR(6px);  .dropShadow(0px, 2px, 2px, fade(@c_Black,20)); cursor: move;}
+	form {padding:0; margin:0px 0px; .bgcolor(@c_Gray7);
+		fieldset {margin:0 0 10px 0; padding:0 10px;
+			label {}
+			input,textarea {margin-top: 5px; .bgcolor(@c_White)}
+		}
+		fieldset.submit {
+			label {float:left;
+				a {margin:0;}
+			}
+		}
+	}
+}

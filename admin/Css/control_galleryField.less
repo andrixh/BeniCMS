@@ -1,0 +1,41 @@
+@import 'common';
+
+
+
+ul.galleryField {padding-bottom:2px; height:auto; .bgpos(2px, 2px); display: block; clear: both; .controlBorder;
+	li {display: block; float: left; padding:0; margin:2px 1px 1px 2px; border:1px solid @c_Black; position: relative;
+		a.close {display:none;}
+		img {display: block; padding: 0; margin:0;}
+		&:hover { cursor:pointer;
+			img {outline:3px solid @c_Hilight1;}
+			a.close {display:block; width: 17px; height:17px; position: absolute; right:1px; top:1px; .bold; .bgcolor(@c_White); font-size: 15px; .roundCorners(2px); text-align: center;
+				&:link, &:visited {opacity: 0.5; color:@c_Gray3; border: 1px solid @c_Gray3}
+				&:hover {opacity: 1; color:@c_Gray3; border: 1px solid @c_Hilight1;}
+				&:active {opacity: 1; color:@c_Black; .bgcolor(@c_Gray4); border: 1px solid @c_Highlight1; top:2px;}
+			}
+		}
+	}
+	li.video {position:relative;
+		&:before {display: block; content: ""; width:15px; height: 17px; position: absolute; bottom: 3px; left:3px; .bgimg('videoOverlay.png');}
+	}
+	li.ui-sortable-helper { .dropShadow (2px, 10px, 5px, rgba(0,0,0,0.3));}
+	&:hover {.activeBorder;}
+	&:after {content:""; display: block; clear: both;}
+}
+
+ul.galleryField.accepting {outline:3px solid @c_Hilight1;}
+
+fieldset.col1 ul.galleryField {min-height:76px; .bgimg('galleryBack_M.gif'); width:305px;
+	li {width: 71px; height: 71px; 
+		img {width: 71px; height: 71px;}
+	}
+}
+
+fieldset.col2 ul.galleryField {min-height:81px; .bgimg('galleryBack_L.gif'); width:650px;
+	li {width: 76px; height: 76px; 
+		img {width: 76px; height: 76px;}
+	}
+}
+
+fieldset.col2 ul.galleryField.single {width:82px;}
+fieldset.col1 ul.galleryField.single {width:77px;}

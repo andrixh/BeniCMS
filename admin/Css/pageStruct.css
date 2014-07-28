@@ -1,0 +1,493 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background-color: #FFFFFF;
+}
+ul.pageStruct {
+  display: block;
+  margin: 0;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  position: relative;
+  z-index: 100;
+}
+ul.pageStruct:after {
+  display: block;
+  clear: both;
+  content: "";
+  width: 0px;
+  height: 0px;
+}
+ul.pageStruct li {
+  display: block;
+  clear: both;
+  min-height: 15px;
+}
+ul.pageStruct li ul {
+  margin-left: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+  position: relative;
+  top: -5px;
+  clear: both;
+  float: left;
+}
+ul.pageStruct li span.page {
+  display: block;
+  float: left;
+  width: auto;
+  border: 1px solid #969696;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin: 1px 1px 7px 1px;
+  background-color: #f0f0f0;
+  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  min-width: 242px;
+  position: relative;
+}
+ul.pageStruct li span.page:after {
+  display: block;
+  clear: both;
+  content: "";
+  width: 0px;
+  height: 0px;
+}
+ul.pageStruct li span.page a {
+  background-image: url("/admin/Gfx/pageStruct.png");
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin-bottom: 3px;
+}
+ul.pageStruct li span.page span.main {
+  display: block;
+  float: left;
+  padding: 3px;
+  height: 47px;
+  border-right: 1px solid #e0e0e0;
+  cursor: move;
+}
+ul.pageStruct li span.page span.main img {
+  display: block;
+  clear: both;
+}
+ul.pageStruct li span.page span.main span.pageType {
+  display: block;
+  font-size: 6px;
+  text-transform: uppercase;
+  color: #606060;
+  text-align: center;
+}
+ul.pageStruct li span.page span.main:hover {
+  background-color: #8ebe2c;
+}
+ul.pageStruct li span.page span.dropArea {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: none;
+}
+ul.pageStruct li span.page span.dropArea.top {
+  height: 25%;
+  top: 0;
+}
+ul.pageStruct li span.page span.dropArea.middle {
+  height: 50%;
+  top: 25%;
+}
+ul.pageStruct li span.page span.dropArea.bottom {
+  height: 25%;
+  top: 75%;
+}
+ul.pageStruct li span.page span.dropArea.ui-droppable {
+  background-color: rgba(142,190,44,0.5);
+  display: block;
+  opacity: 0;
+}
+ul.pageStruct li span.page span.dropArea.ui-droppable.hover {
+  opacity: 1;
+}
+ul.pageStruct li span.page span.labels {
+  display: block;
+  padding: 3px 3px 3px 3px;
+  background-color: #f9f9f9;
+  width: auto;
+  height: 47px;
+  float: left;
+  width: 120px;
+}
+ul.pageStruct li span.page span.labels img {
+  display: block;
+  cursor: move;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+ul.pageStruct li span.page span.labels span {
+  display: block;
+  margin-bottom: 1px;
+  white-space: nowrap;
+  clear: both;
+  float: left;
+  width: auto;
+}
+ul.pageStruct li span.page span.labels span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+ul.pageStruct li span.page span.labels span.pageID {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+}
+ul.pageStruct li span.page span.labels span.pageTitle,
+ul.pageStruct li span.page span.labels span.menuTitle {
+  font-size: 11px;
+}
+ul.pageStruct li span.page span.labels input {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  border: #606060 1px solid;
+  width: 110px;
+  margin-bottom: -1px;
+}
+ul.pageStruct li span.page span.visibility {
+  display: block;
+  padding: 3px;
+  height: 47px;
+  border-left: 1px solid #e0e0e0;
+  position: absolute;
+  right: 21px;
+  top: 0;
+}
+ul.pageStruct li span.page span.visibility a.menuGroup1 {
+  background-position: -17px -14px;
+}
+ul.pageStruct li span.page span.visibility a.menuGroup1.on {
+  background-position: -17px 0px;
+}
+ul.pageStruct li span.page span.visibility a.menuGroup2 {
+  background-position: -32px -14px;
+}
+ul.pageStruct li span.page span.visibility a.menuGroup2.on {
+  background-position: -32px 0px;
+}
+ul.pageStruct li span.page span.visibility a.menuGroup3 {
+  background-position: -47px -14px;
+}
+ul.pageStruct li span.page span.visibility a.menuGroup3.on {
+  background-position: -47px 0px;
+}
+ul.pageStruct li span.page span.behaviour {
+  display: block;
+  padding: 3px;
+  height: 47px;
+  border-left: 1px solid #e0e0e0;
+  position: absolute;
+  right: 41px;
+  top: 0;
+}
+ul.pageStruct li span.page span.behaviour a.home {
+  display: block;
+  width: 16px;
+  height: 13px;
+  background-position: 0px -14px;
+}
+ul.pageStruct li span.page span.behaviour a.home.on {
+  background-position: 0px 0px;
+}
+ul.pageStruct li span.page span.behaviour a.cache {
+  display: block;
+  width: 16px;
+  height: 13px;
+  background-position: -106px -14px;
+}
+ul.pageStruct li span.page span.behaviour a.cache.on {
+  background-position: -106px 0px;
+}
+ul.pageStruct li span.page span.behaviour a.track {
+  display: block;
+  width: 16px;
+  height: 13px;
+  background-position: -122px -14px;
+}
+ul.pageStruct li span.page span.behaviour a.track.on {
+  background-position: -122px 0px;
+}
+ul.pageStruct li span.page span.connections {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 3px;
+  height: 47px;
+  border-left: 1px solid #e0e0e0;
+}
+ul.pageStruct li span.page span.connections a.active {
+  background-position: -62px -14px;
+}
+ul.pageStruct li span.page span.connections a.active.on {
+  background-position: -62px 0px;
+}
+ul.pageStruct li span.page span.connections a.rep {
+  background-position: -77px -14px;
+}
+ul.pageStruct li span.page span.connections a.rep.on {
+  background-position: -77px 0px;
+}
+ul.pageStruct li span.page span.connections a.link {
+  background-position: -92px -14px;
+}
+ul.pageStruct li span.page span.connections a.link.on {
+  background-position: -92px 0px;
+  position: relative;
+}
+ul.pageStruct li span.page span.connections a.link.on span.extLink {
+  display: block;
+  position: absolute;
+  width: auto;
+  height: 13px;
+  font-size: 10px;
+  padding: 3px 3px 3px 20px;
+  top: -3px;
+  left: 25px;
+  border: 1px solid #969696;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #f0f0f0;
+  color: #303030;
+  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+}
+ul.pageStruct li span.page span.connections a.link.on span.extLink:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 1px;
+  border-top: 1px solid #969696;
+  left: -6px;
+  top: 9px;
+}
+ul.pageStruct li span.page span.connections a.link.on span.extLink:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 13px;
+  background-image: url("/admin/Gfx/pageStruct.png");
+  background-position: 0px -14px;
+  top: 3px;
+  left: 2px;
+}
+ul.pageStruct li span.page:hover {
+  border-color: #8ebe2c;
+  background-color: #FFFFFF;
+}
+ul.pageStruct li span.page span.actions {
+  display: none;
+}
+ul.pageStruct li span.page.expectDrop {
+  background-color: #FFFFFF;
+  border: 2px solid #8ebe2c;
+  margin: 0px 0px 6px 0px;
+}
+ul.pageStruct li span.page.expectDrop span.labels {
+  background-color: #FFFFFF;
+}
+ul.pageStruct li span.page.expectDrop.hover {
+  background-color: #c7e293;
+}
+ul.pageStruct li span.page.expectDrop.hover span {
+  background-color: #c7e293;
+}
+ul.pageStruct li span.page.selected {
+  color: #FFFFFF;
+  background-color: #8ebe2c;
+  border-color: #000000;
+}
+ul.pageStruct li span.page.selected span {
+  color: #FFFFFF;
+  background-color: #8ebe2c;
+  border-color: #000000;
+}
+ul.pageStruct li span.page.selected span.actions {
+  display: block;
+  position: absolute;
+  top: -1px;
+  right: -86px;
+  background-image: none;
+  background-color: #8ebe2c;
+  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+  border: 1px solid #969696;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 1px;
+}
+ul.pageStruct li span.page.selected span.actions a.button {
+  display: block;
+  width: auto;
+  padding: 2px 6px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+  font-size: 10px;
+  background-image: none;
+  white-space: nowrap;
+  margin: 3px;
+  position: relative;
+}
+ul.pageStruct li span.page.selected span.actions a.button:link,
+ul.pageStruct li span.page.selected span.actions a.button:visited {
+  background-color: #f0f0f0;
+  color: #606060;
+  border: 1px solid #969696;
+  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+ul.pageStruct li span.page.selected span.actions a.button:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid #8ebe2c;
+}
+ul.pageStruct li span.page.selected span.actions a.button:active {
+  -moz-box-shadow: 0px 0px 2px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0);
+  box-shadow: 0px 0px 2px rgba(0,0,0,0);
+  position: relative;
+  top: 1px;
+  border: 1px solid #6a901d;
+  background-color: #e0e0e0;
+  color: #8ebe2c;
+}
+ul.pageStruct li:last-child {
+  margin-bottom: 0px;
+}
+ul.pageStruct .ui-draggable-dragging {
+  position: absolute;
+  z-index: 200000;
+}
+ul.pageStruct .ui-draggable-dragging .extLink {
+  display: none !important;
+}
+ul.pageStruct .ui-draggable-dragging span.page {
+  -moz-box-shadow: 10px 20px 6px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 10px 20px 6px rgba(0,0,0,0.2);
+  box-shadow: 10px 20px 6px rgba(0,0,0,0.2);
+}
+ul.pageStruct .pagePlaceHolder {
+  display: block;
+  width: 500px;
+  min-height: 53px;
+  background-color: #c7e293;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: #8ebe2c 2px dotted;
+  box-sizing: border-box;
+  margin: 0;
+}
+div.holder {
+  position: relative;
+  margin: 20px 0 0 20px;
+}
+div.holder svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+div.holder svg .repCurve {
+  stroke: #8ebe2c;
+  stroke-width: 1;
+  fill: none;
+}
+div.holder svg .repCurve_mark {
+  stroke: #8ebe2c;
+  stroke-width: 1;
+  fill: #8ebe2c;
+}
+div.holder svg .linkCurve {
+  stroke: #606060;
+  stroke-width: 1;
+  fill: none;
+}
+div.holder svg .linkCurve_mark {
+  stroke: #606060;
+  stroke-width: 1;
+  fill: #606060;
+}
+div.holder svg .tempRepCurve {
+  stroke: #6a901d;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 3, 3;
+}
+div.holder svg .tempRepCurve_mark {
+  stroke: #6a901d;
+  stroke-width: 2;
+  fill: #6a901d;
+}
+div.holder svg .tempLinkCurve {
+  stroke: #303030;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 3, 3;
+}
+div.holder svg .tempLinkCurve_mark {
+  stroke: #303030;
+  stroke-width: 2;
+  fill: #303030;
+}
+div.holder svg #treeGroup {
+  stroke: #606060;
+  stroke-width: 1;
+  fill: none;
+  stroke-dasharray: 1, 1;
+}
+div.holder svg #treeGroup .pageRect {
+  stroke: #606060;
+  stroke-width: 1;
+  fill: #f9f9f9;
+  stroke-dasharray: 3, 3;
+}
+.ui-sortable-helper {
+  height: auto !important;
+}
+.ui-sortable-helper:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.ugly {
+  outline: 2px solid #F00;
+}

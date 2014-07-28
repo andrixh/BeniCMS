@@ -1,0 +1,128 @@
+@import 'common';
+
+fieldset.col1 div.htmlEditor {width:303px}
+fieldset.col2 div.htmlEditor {width:648px}
+
+div.htmlEditor{display:block; clear:both; .controlBorder;
+	div.toolArea {display:block; width: 100%; border-bottom:1px solid @c_Gray3; .bgcolor(@c_Gray6); overflow:hidden;
+		ul.selection {display:block; position:absolute; float:left; width:60px;  margin-right:14px;
+			li.current { display:block; font-size: 11px; padding:3px 5px;  color:@c_Black; width:auto; position:relative; .bgcolor(@c_Gray5); height:17px; 
+				&:before {position:absolute; display:block; content:""; top:0px; right:-9px; width:0; height:0; border-top:11px solid transparent; border-bottom:11px solid transparent; border-left:8px solid @c_Gray4;}
+				&:after {position:absolute; display:block; content:""; top:0px; right:-8px; width:0; height:0; border-top:11px solid transparent; border-bottom:11px solid transparent; border-left:8px solid @c_Gray5;}
+			}
+		}
+		li.containers {display: none; position:absolute; z-index:300; left:-1px; top:22px;
+			ul {display:block; padding: 2px; .bgcolor(@c_White); border:1px solid @c_Gray3;
+				li {display:block; padding:1px 3px; font-size:11px;
+					&:hover {.bgcolor(@c_Hilight1); cursor:pointer}
+				}
+			}
+		}
+		ul.selection.active{cursor: pointer;
+		
+			&:hover {
+				li.current {.bgcolor(@c_Hilight1);
+					&:after {border-left:8px solid @c_Hilight1;}
+				}
+				li.containers {display:block;}
+				
+			}
+		}
+		
+		
+		div.tools {display:block; float:left; overflow:hidden; padding-left:75px;
+			separator {display:block; float:left; width:3px; height:18px;}
+			a.toolButton {display:block; float:left; width: 18px; height:18px; .bgimg('htmlEditorStdToolbar.png'); .no-repeat; text-indent: -99999px;  .roundCorners(2px);  .dropShadow (0px, 1px, 1px, rgba(0,0,0,0.3)); margin:1px 1px 2px 0; padding:0;
+				&:link, &:visited {color:@c_Gray3; border: 1px solid @c_Gray3;  .bgcolor(@c_Gray6);}
+				&:hover { color:@c_Gray3; border: 1px solid @c_Hilight1;  .bgcolor(@c_White);}
+				&:active { color:@c_Black; .bgcolor(@c_Gray4); border: 1px solid @c_Highlight1; top:1px;  .dropShadow (0px, 2px, 2px, rgba(0,0,0,0));}
+			}
+			a.toolButton.active {
+				&:hover{color:@c_Black; .bgcolor(@c_Gray4); border: 1px solid @c_Highlight1; top:1px;  .dropShadow (0px, 2px, 2px, rgba(0,0,0,0));}
+			}
+			
+			a.toolButton_strong {.bgposY(-18*0px)}
+			a.toolButton_em {.bgposY(-18*1px)}
+			a.toolButton_sub {.bgposY(-18*2px)}
+			a.toolButton_sup {.bgposY(-18*3px)}
+			
+			a.toolButton_outdent {.bgposY(-18*6px)}
+			a.toolButton_indent {.bgposY(-18*7px)}
+			
+			a.toolButton_ol {.bgposY(-18*4px)}
+			a.toolButton_ul {.bgposY(-18*5px)}
+		}
+		
+	}
+		
+	div.editor {.bgcolor(@c_Gray6); min-height: 300px; padding:3px; height:300px; overflow-y: scroll; .innerShadow(0px, 2px, 2px, rgba(0,0,0,0.2)); clear:both;
+		>p,>h1,>h2,>h3,>h4,>h5,>h6,>ol,>ul,>item{display: block; margin: 2px 0px 3px 20px; .bgcolor(@c_White); color:@c_Gray2; font-weight:normal; white-space:wrap; font-style:normal; padding:5px; text-indent:0; line-height: normal; border:none; border-right:18px solid @c_Gray6; .dropShadow(0px,1px,2px, rgba(0,0,0,0.3)); position: relative; .roundCornersTR(3px); .roundCornersBL(3px); .roundCornersBR(3px); cursor:text;
+			em {.italic;}
+			strong {.bold; color:@c_Black}
+			strong em, em strong {.bold; .italic; color:@c_Black}
+			sub {vertical-align:sub; font-size:smaller}
+			sup {vertical-align:super ; font-size:smaller}
+			&:before {content:""; display: block; position: absolute; width:19px; height: 28px; .bgimg('tags.png'); top:-1px; left: -19px; }
+			handle {display: block; position: absolute; width:19px; height: 28px; top:-1px; left: -19px; cursor: move;}
+			close {display:block; width: 12px; height:12px; position: absolute; right:-16px; top:2px; .bold; .bgcolor(@c_White); font-size: 14px; .roundCorners(2px); text-align: center; color:@c_Gray3; border: 1px solid @c_Gray3; cursor: pointer; line-height: 7px; .f_Tahoma; -moz-user-select:none;
+				&:hover {opacity: 1; color:@c_Gray3; border: 1px solid @c_Hilight1;}
+				&:active {opacity: 1; color:@c_Black; .bgcolor(@c_Gray4); border: 1px solid @c_Highlight1; top:3px;}
+				&:before {content:"x"; display: block; position: absolute; width:12px; height: 12px; top:1px; left: 0px; }
+			}
+			
+			span {border:1px dotted @c_Gray4;}
+		}
+		
+		.ui-sortable-helper {.dropShadow (2px, 10px, 5px, rgba(0,0,0,0.3)); cursor:move;}
+		
+		p {.f_Georgia; font-size: 13px; 
+			&:before {.bgposX(0px)}
+		}
+		h1,h2,h3,h4,h5,h6 {.f_Tahoma;}
+		p,ul,dl{line-height: 20px;}
+		h1 { font-size: 25px; 
+			&:before {.bgposX(-19px)}
+		}
+		h2 {font-size: 22px;
+			&:before {.bgposX(-38px)}
+		}
+		h3 {font-size: 20px;
+			&:before {.bgposX(-57px)}
+		}
+		h4 {font-size: 18px;
+			&:before {.bgposX(-76px)}
+		}
+		h5 { font-size: 16px;
+			&:before {.bgposX(-95px)}
+		}
+		h6 { font-size: 14px;
+			&:before {.bgposX(-114px)}
+		}
+		ol{ 
+			&:before {.bgposX(-133px)}
+			li {list-style:decimal; margin-left:25px;}
+			ol{ margin-left:25px; 
+				
+			}
+		}
+		ul{
+			&:before {.bgposX(-152px)}
+			li {list-style:disc; margin-left:14px;}
+			ul{ margin-left:14px; 
+				
+			}
+		}
+		
+		
+		
+		ul,ol { .f_Georgia; font-size: 13px; line-height:18px; color:@c_Black;}
+		
+		
+		item {-moz-user-select: none;	-webkit-user-select: none;	-ms-user-select: none;
+
+			&:before {.bgposX(-171px)}
+
+
+		}
+	}
+}

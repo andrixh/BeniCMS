@@ -1,0 +1,89 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background-color: #FFFFFF;
+}
+ul.pageTypes {
+  display: block;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+ul.pageTypes li {
+  display: block;
+  float: none;
+  clear: both;
+  margin-bottom: 8px;
+}
+ul.pageTypes li a {
+  display: block;
+  width: 305px;
+  padding: 4px 14px 4px 4px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+  min-height: 48px;
+}
+ul.pageTypes li a img {
+  display: block;
+  float: left;
+  padding-right: 10px;
+  padding-bottom: 4px;
+}
+ul.pageTypes li a:link,
+ul.pageTypes li a:visited {
+  background-color: #f0f0f0;
+  color: #606060;
+  border: 2px solid #969696;
+  -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  margin-right: 10px;
+}
+ul.pageTypes li a:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #8ebe2c;
+}
+ul.pageTypes li a:active {
+  -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  position: relative;
+  top: 2px;
+  border: 2px solid #6a901d;
+  background-color: #e0e0e0;
+  color: #000000;
+}
+ul.pageTypes li a span {
+  display: block;
+  font-size: 15px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+ul.pageTypes li a em {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+ul.pageTypes li a.shy {
+  opacity: 0.5;
+}

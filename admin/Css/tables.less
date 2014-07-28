@@ -1,0 +1,117 @@
+@import 'common';
+@import 'menu';
+@import 'notifications';
+
+
+
+form {display: block; .bgcolor(@c_White); .f_Verdana; font-size: 13px; padding:@w_gutter/4 @w_gutter/2 0 @w_gutter/2;
+	input[type=text], select {.controlBorder; padding:@d_controlPadding; margin-left: 5px;
+		&:hover, &:active {.activeBorder}
+	}
+
+}
+
+div#table {display: block; .bgcolor(@c_White); .f_Tahoma;
+	table { font-size:11px; font-weight:normal; border-right:@c_Gray4 1px solid; border-bottom:@c_Gray4 1px solid; margin:@w_gutter/4 @w_gutter/2; .bgcolor(@c_White);  .dropShadow(0px, 1px, 1px, fade(@c_Black,30));
+		tr.tableHead{ .dropShadow (0px, 1px, 0px,  fade(@c_Black,20)); 
+			th {background:@c_Gray5; .bold; border-top:@c_Gray4 1px solid; border-left:@c_Gray3 1px solid; padding:0px; 
+				a {display: block; padding:2px 20px 2px 3px; text-decoration:none; color:@c_Black; white-space: nowrap;
+					&:link, &:visited {display:block; }
+					&:hover, &:active {.bgcolor(@c_Gray4); .bgimg('sortIndicator.png'); .bgpos(right, -36px); .no-repeat}
+				}
+				a.sortASC {
+					&:link, &:visited {.bgcolor(@c_Gray4); .bgimg('sortIndicator.png'); .bgpos(right, -36px); .no-repeat}
+					&:hover, &:active {.bgcolor(@c_Gray4); .bgimg('sortIndicator.png'); .bgpos(right, -54px); .no-repeat}
+				}
+				a.sortDESC {
+					&:link, &:visited {.bgcolor(@c_Gray4); .bgimg('sortIndicator.png'); .bgpos(right, -54px); .no-repeat}
+					&:hover, &:active {.bgcolor(@c_Gray4); .bgimg('sortIndicator.png'); .bgpos(right, -36px); .no-repeat}
+				}
+			}
+		}
+
+		tr {
+			td {border-top:@c_Gray4 1px solid; border-left:@c_Gray4 1px solid; padding:2px 3px 2px 3px; color:@c_Bray3}
+			td.dynamicString {.bgcolor(@c_CellDynamicString);
+				a { .bgimg('EditButton.png'); width:15px; height: 15px; display: block; float:right; text-decoration:none; 
+					&:link, &:visited	{.bgposX(0px);}
+					&:hover {.bgposX(-15px);}
+					&:active {.bgposX(-30px);}
+				}
+			}
+			td.fileExtension {.bgcolor(@c_Gray6);
+				img {display:block; float:left; margin:0px 3px 0px 0px}
+			}
+			td.boolean {
+              span {display:block; float:left; width:11px; height:11px; margin:2px 5px 0px 0px; .bgimg('Checkbox.png'); .bgposY(-11px) }
+              span.booleanOn{.bgcolor(@c_Hilight0);  .bgposY(0px)}
+              &.toggle, &.exclusive {
+                cursor: pointer;
+                &:hover {.bgcolor(@c_Hilight0);}
+              }
+
+			}
+			td.image {padding:0; margin:0; text-align: center; .bgcolor(@c_CellImage);
+				a {display: inline-block; margin:0 auto; padding:0;  width: auto; position: relative;
+					img {display: block; margin: 0; padding: 0;}
+					div.imageView{display: block; position: absolute; top:75%; left:90%; .bgcolor(@c_White); .dropShadow (1px, 1px, 5px, fade(@c_Black,70)); z-index:100; border:5px solid @c_White; .roundCornersTR(5px); .roundCornersBR(5px); .roundCornersBL(5px);
+						&:after {content:""; display: block; .bgimg('imgPointer.png'); .no-repeat; width:14px; height: 14px; position: absolute; top:-10px; left: -9px;}
+						img {.bgimg('transpBG.gif');}
+					} 
+				}
+			}
+            td.rank {
+              a {font-size: 13px; display: block; float: left; position: relative;
+                &:nth-of-type(2){top:1px;}
+                &:link, &:visited {color:@c_Gray3;}
+                &:hover, &:active {color:@c_Hilight1;}
+              }
+            }
+			&.selected td{background-color: @c_RowSelect!important; color:@c_Black;}
+		}
+		
+	}
+	div.tableControls {font-size:11px; padding-bottom: @w_gutter/4;
+	    &:after{content:""; clear: both; float: none; display: block}
+		div.tableNav {float:left; margin-left:@w_gutter/2; 
+			a { 
+				&:link, &:visited {display: block; float: left; padding:1px 2px; .bgcolor(@c_White); border-color: @c_Gray5; border-style: solid; border-width:1px 0px 1px 1px; color:@c_Gray2; font-size:11px; position: relative; .dropShadow (0px,1px,1px,fade(@c_Black,30));}
+				&:hover {.bgcolor(@c_Hilight1); color:@c_White;}
+			  	&:active {.bgcolor(@c_Hilight1); color:@c_White; top:1px;}
+			}			
+			a.disabled {
+				&:link, &:visited, &:hover, &:active {.bgcolor(transparent); color:@c_Gray4; cursor: default;}
+			}
+			a.current { 
+				&:link, &:visited, &:active {.bgcolor(@c_Gray3); color:@c_White;}
+			 	&:hover {.bgcolor(@c_Hilight1); color:@c_White;}
+			}
+		}
+		div.pageCount {float:left; margin-left:@w_gutter/2;
+			p {display: block; float: left; line-height:18px; color: @c_Gray3; margin-right:5px;
+				strong {color:@c_Black;}
+			}
+			a {
+				&:link, &:visited {display: block; float: left; padding:1px 2px; .bgcolor(@c_White); border-color: @c_Gray5; border-style: solid; border-width:1px 0px 1px 1px; color:@c_Gray2; font-size:11px; position: relative; .dropShadow (0px, 1px, 1px, fade(@c_Black,30));}
+				&:hover {.bgcolor(@c_Hilight1); color:@c_White;}
+			  	&:active {.bgcolor(@c_Hilight1); color:@c_White; top:1px;}
+			}
+			a.current { 
+				&:link, &:visited, &:active {.bgcolor(@c_Gray3); color:@c_White;}
+			 	&:hover {.bgcolor(@c_Hilight1); color:@c_White;}
+			}
+		}
+	}
+}
+
+div.actions{display: block; clear: both; float: none; .bgcolor(@c_White); .dropShadow (0px, -2px, 2px, fade(@c_Black,20)); padding:@w_gutter/4 @w_gutter/2 @w_gutter/2 @w_gutter/2; .f_Tahoma;
+	&:after {content:""; display: block; clear:both;}
+	a {display:block; float: left; width:auto;  padding:4px 14px;  .roundCorners(3px); cursor: pointer;  font-size: 13px;
+		&:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 2px solid @c_Gray3; .dropShadow (0px, 3px, 3px, fade(@c_Black,50)); margin-right: 10px;}
+		&:hover {.bgcolor(@c_White); color:@c_Black; border: 2px solid @c_Hilight1;}
+		&:active {.dropShadow (0px, 2px, 3px, fade(@c_Black,0)); position: relative; top:2px; border: 2px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+	}
+	li {display: block; float: left;
+		&.separator{display: block; width:0px; height:40px; position: relative; top:-5px; margin:0 10px 0 0px; border-left: 1px solid @c_Gray3 }
+	}
+}

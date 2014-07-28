@@ -1,0 +1,54 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background-color: #FFFFFF;
+}
+ul.imageSelect {
+  display: block;
+  padding: 2px;
+  border: 1px solid #969696;
+  clear: both;
+  overflow-y: scroll;
+  min-height: 70px;
+  max-height: 280px;
+  background-color: #FFFFFF;
+  position: relative;
+}
+ul.imageSelect li {
+  display: block;
+  float: left;
+  padding: 4px;
+  cursor: pointer;
+  position: relative;
+}
+ul.imageSelect li img {
+  display: block;
+}
+ul.imageSelect li:hover {
+  margin: 0px;
+  padding: 1px;
+  border: #8ebe2c 3px solid;
+}
+ul.imageSelect li.selected {
+  margin: 0px;
+  padding: 1px;
+  border: #567911 3px solid;
+}
+ul.imageSelect:hover {
+  border-color: #8ebe2c;
+}

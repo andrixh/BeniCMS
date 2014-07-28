@@ -1,0 +1,559 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background-color: #FFFFFF;
+}
+form {
+  background-color: #FFFFFF;
+}
+form:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+form fieldset.col1 {
+  width: 305px;
+  display: block;
+  float: left;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+form fieldset.col1 > h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #8ebe2c;
+  border-bottom: 1px solid #8ebe2c;
+}
+form fieldset.col2 {
+  width: 650px;
+  display: block;
+  float: left;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+form fieldset.col2 > h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #8ebe2c;
+  border-bottom: 1px solid #8ebe2c;
+}
+form fieldset.first {
+  clear: both;
+}
+form fieldset.hidden {
+  display: none !important;
+}
+form fieldset.submit {
+  display: block;
+  float: left;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  margin: 0;
+  clear: both;
+  float: none;
+  background-color: #FFFFFF;
+  -moz-box-shadow: 0px -2px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px -2px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px -2px 2px rgba(0,0,0,0.2);
+  padding-left: 20px;
+}
+form fieldset.submit > h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #8ebe2c;
+  border-bottom: 1px solid #8ebe2c;
+}
+form fieldset.submit input[type=submit] {
+  width: auto;
+  background-color: #f0f0f0;
+  color: #606060;
+  padding: 4px 14px;
+  border: 2px solid #969696;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+  -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+}
+form fieldset.submit input[type=submit]:focus,
+form fieldset.submit input[type=submit]:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #8ebe2c;
+}
+form fieldset.submit input[type=submit]:active {
+  -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  position: relative;
+  top: 2px;
+  border: 2px solid #6a901d;
+  background-color: #e0e0e0;
+  color: #000000;
+}
+form fieldset.submit label {
+  display: block;
+  float: left;
+  clear: none;
+  width: auto;
+}
+form fieldset.submit label span {
+  float: left;
+  clear: none;
+  color: #c8c8c8;
+  padding: 0px 10px 0 0;
+  line-height: 30px;
+}
+form fieldset.submit label select {
+  float: left;
+  clear: none;
+  width: auto;
+  opacity: 0.5;
+  margin-top: 5px;
+}
+form fieldset.submit.simple {
+  background-color: #f9f9f9;
+  -moz-box-shadow: 0px 0px 0px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0);
+  padding-top: 0px;
+  padding-bottom: 15px;
+  margin-top: 0px;
+}
+form fieldset.submit.simple label {
+  margin: 0;
+  padding: 0;
+}
+form > fieldset > label {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin-bottom: 7px;
+  margin-top: 10px;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  position: relative;
+  font-size: 13px;
+  line-height: 13px;
+  min-height: 13px;
+}
+form > fieldset > label span.label {
+  display: block;
+  float: left;
+  margin-bottom: 3px;
+  margin-right: 6px;
+}
+form > fieldset > label span.description {
+  display: block;
+  color: #606060;
+  font-size: 10px;
+  float: left;
+  line-height: 15px;
+}
+form > fieldset > label span.errorHolder {
+  display: block;
+  clear: both;
+  position: relative;
+  height: 0px;
+  width: 100%;
+  overflow: visible;
+}
+form > fieldset > label span.formError {
+  background-image: url("/admin/Gfx/formError.png");
+  background-repeat: no-repeat;
+  display: block;
+  width: 12px;
+  height: 12px;
+  float: right;
+  position: absolute;
+  top: 2px;
+  right: -17px;
+  cursor: pointer;
+}
+form > fieldset > label span.formError span {
+  text-align: left;
+  font-weight: normal;
+  font-size: 11px;
+  width: auto;
+  background-color: #fff4b9;
+  padding: 3px;
+  color: #785c38;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 18px;
+  z-index: 200;
+  white-space: pre;
+}
+form > fieldset > label fieldset > div {
+  background-color: #FFFFFF;
+}
+form > fieldset > label.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+form > fieldset > label.disabled * {
+  cursor: not-allowed !important;
+}
+form > fieldset > label.disabled textarea,
+form > fieldset > label.disabled input[type=text],
+form > fieldset > label.disabled input[type=number],
+form > fieldset > label.disabled input[type=email],
+form > fieldset > label.disabled input[type=password] {
+  border: 1px solid #c8c8c8;
+}
+form > fieldset > label.disabled textarea:hover,
+form > fieldset > label.disabled textarea:focus,
+form > fieldset > label.disabled input[type=text]:hover,
+form > fieldset > label.disabled input[type=text]:focus,
+form > fieldset > label.disabled input[type=number]:hover,
+form > fieldset > label.disabled input[type=number]:focus,
+form > fieldset > label.disabled input[type=email]:hover,
+form > fieldset > label.disabled input[type=email]:focus,
+form > fieldset > label.disabled input[type=password]:hover,
+form > fieldset > label.disabled input[type=password]:focus {
+  border: 1px solid #c8c8c8;
+}
+form fieldset.thin {
+  margin-bottom: 0px;
+}
+form fieldset > h2.thin {
+  margin-bottom: 0px;
+}
+form textarea {
+  border: 1px solid #969696;
+  padding: 2px;
+}
+form textarea:hover,
+form textarea:focus {
+  border: 1px solid #8ebe2c;
+}
+form div.CodeMirror {
+  border: 1px solid #969696;
+  padding: 2px;
+  clear: both;
+  background-color: #FFFFFF;
+  cursor: text;
+}
+form div.CodeMirror:hover,
+form div.CodeMirror:focus {
+  border: 1px solid #8ebe2c;
+}
+form input[type=checkbox] {
+  display: block;
+  float: left;
+  margin-top: 1px;
+  margin-right: 5px;
+  clear: both;
+  cursor: pointer;
+}
+form input[type=checkbox]:hover + span.label,
+form input[type=checkbox]:focus+span.label {
+  color: #6a901d;
+}
+form input[type=checkbox] + span.label + span.description,
+form input[type=checkbox] + span.label + span.errorHolder + span.description {
+  clear: both;
+  float: none;
+}
+form input[type=checkbox] + span.label + span.errorHolder {
+  display: block;
+  clear: none;
+  float: left;
+  position: relative;
+  width: 0px;
+}
+form input[type=checkbox] + span.label + span.errorHolder span.formEror {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+form input[type=text],
+form input[type=number],
+form input[type=email],
+form input[type=password] {
+  display: block;
+  clear: both;
+  border: 1px solid #969696;
+  padding: 2px;
+}
+form input[type=text]:hover,
+form input[type=text]:focus,
+form input[type=number]:hover,
+form input[type=number]:focus,
+form input[type=email]:hover,
+form input[type=email]:focus,
+form input[type=password]:hover,
+form input[type=password]:focus {
+  border: 1px solid #8ebe2c;
+}
+form input[type=file] {
+  display: block;
+  clear: both;
+  border: 1px solid #969696;
+  padding: 2px;
+  width: 100%;
+}
+form input[type=file]:hover,
+form input[type=file]:focus {
+  border: 1px solid #8ebe2c;
+}
+form input.datePicker {
+  background-image: url("/admin/Gfx/calendar.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+form select {
+  display: block;
+  clear: both;
+  border: 1px solid #969696;
+  width: 100%;
+}
+form select option[selected=selected] {
+  font-weight: bold;
+}
+form select option.inset0 {
+  text-indent: 0px;
+}
+form select option.inset1 {
+  text-indent: 10px;
+}
+form select option.inset2 {
+  text-indent: 20px;
+}
+form select option.inset3 {
+  text-indent: 30px;
+}
+form select option.inset4 {
+  text-indent: 40px;
+}
+form select option.inset5 {
+  text-indent: 50px;
+}
+form select option.inset6 {
+  text-indent: 60px;
+}
+form select option.inset7 {
+  text-indent: 70px;
+}
+form select option.inset8 {
+  text-indent: 80px;
+}
+form select option.inset9 {
+  text-indent: 90px;
+}
+form select option.inset10 {
+  text-indent: 100px;
+}
+form fieldset.col1 textarea {
+  width: 301px;
+  min-width: 301px;
+  max-width: 301px;
+}
+form fieldset.col1 input[type=text],
+form fieldset.col1 input[type=number],
+form fieldset.col1 input[type=email],
+form fieldset.col1 input[type=password] {
+  width: 301px;
+}
+form fieldset.col1 div.CodeMirror {
+  width: 301px;
+}
+form fieldset.col2 textarea {
+  width: 301px;
+  min-width: 646px;
+  max-width: 646px;
+}
+form fieldset.col2 input[type=text],
+form fieldset.col2 input[type=number],
+form fieldset.col2 input[type=email],
+form fieldset.col2 input[type=password] {
+  width: 646px;
+}
+form fieldset.col2 div.CodeMirror {
+  width: 646px;
+}
+form iframe.upload {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 0px;
+  margin-bottom: 3px;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+}
+form a.formButton {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 4px 14px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+}
+form a.formButton:link,
+form a.formButton:visited {
+  background-color: #f0f0f0;
+  color: #606060;
+  border: 2px solid #969696;
+  -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  margin-right: 10px;
+}
+form a.formButton:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #8ebe2c;
+}
+form a.formButton:active {
+  -moz-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  position: relative;
+  top: 2px;
+  border: 2px solid #6a901d;
+  background-color: #e0e0e0;
+  color: #000000;
+}
+form p {
+  text-indent: 0px;
+}
+div.overlay {
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  display: block;
+  z-index: 12000;
+}
+div.overlay.hidden {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+.dialog {
+  display: block;
+  position: fixed;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  z-index: 12100;
+  -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+  width: auto;
+  overflow: hidden;
+}
+.dialog p {
+  font-size: 12px;
+}
+.dialog form,
+.dialog a {
+  display: block;
+}
+.dialog h2 {
+  display: block;
+  margin: 0 0 4px 0;
+  padding: 6px 10px;
+  background-color: #FFFFFF;
+  color: #8ebe2c;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-top-left-radius: 6px;
+  -moz-border-top-left-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  -moz-border-top-right-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  cursor: move;
+}
+.dialog form {
+  padding: 0;
+  margin: 0px 0px;
+  background-color: #f9f9f9;
+}
+.dialog form fieldset {
+  margin: 0 0 10px 0;
+  padding: 0 10px;
+}
+.dialog form fieldset input,
+.dialog form fieldset textarea {
+  margin-top: 5px;
+  background-color: #FFFFFF;
+}
+.dialog form fieldset.submit {
+  text-align: right;
+}
+.dialog form fieldset.submit label {
+  float: left;
+  display: inline-block;
+}
+.dialog form fieldset.submit label a {
+  margin: 0;
+}
+.dialog .working {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  background-image: url("/admin/Gfx/working.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.dialog .working.hidden {
+  display: none;
+}

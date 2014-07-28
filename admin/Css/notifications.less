@@ -1,0 +1,14 @@
+@import 'common';
+
+div.messageBar  {display:none;}
+
+div.messageBar.messageInfo, div.messageBar.messageWarning, div.messageBar.messageError{display:block; margin:0 @w_gutter/3; position: relative; .roundCornersBL (5px); .roundCornersBR (5px); .dropShadow (0px, 1px, 3px, fade(@c_Black,50)); .f_Tahoma; font-size: 13px; padding:5px 10px; border-top: 0px!important;}
+div.messageBar.messageInfo {.bgcolor(@c_Success1); border: 1px solid @c_Success2; color:@c_Success3;
+	a {color:@c_Success2; border-bottom: 1px solid @c_Success2;}
+}
+div.messageBar.messageWarning {.bgcolor(@c_Warning1); border: 1px solid @c_Warning2; color:@c_Warning3;
+	a {color:@c_Warning2; border-bottom: 1px solid @c_Warning2;}
+}
+div.messageBar.messageError {.bgcolor(@c_Error1); border: 1px solid @c_Error2; color:@c_Error3;
+	a {color:@c_Error2; border-bottom: 1px solid @c_Error2;}
+}

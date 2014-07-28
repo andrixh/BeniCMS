@@ -1,0 +1,133 @@
+@import 'common';
+
+ul.pageStruct {display:block; margin:0; .f_Tahoma; position: relative; z-index: 100;
+  &:after {display: block; clear: both; content:""; width: 0px; height: 0px;}
+  li {display:block; clear: both; min-height: 15px;
+
+    ul {margin-left: 15px; padding-left:15px; padding-top:5px; /*border-left: 1px dotted @c_Gray4;*/ position:relative; top:-5px; clear: both; float: left;
+      li { }
+    }
+
+    span.page{display: block; float:left; width:auto; border:1px solid @c_Gray3; .roundCorners(3px); margin: 1px 1px 7px 1px; .bgcolor(@c_Gray6); .dropShadow(0px, 1px, 2px, rgba(0,0,0,0.2)); min-width: 242px; position: relative;
+        &:after {display: block; clear: both; content:""; width: 0px; height: 0px;}
+        a {.bgimg('pageStruct.png'); display:block; width: 14px; height: 13px; margin-bottom:3px;}
+
+        span.main{display:block; float:left; padding:3px; height:47px;  border-right: 1px solid @c_Gray5; cursor:move;
+          img {display: block; clear: both}
+          span.pageType {display: block; font-size: 6px; text-transform: uppercase; color: @c_Gray2; text-align: center}
+          &:hover {.bgcolor(@c_Hilight1);}
+        }
+
+        span.dropArea {position: absolute; width: 100%; left: 0; display: none;
+          &.top {height: 25%; top:0;}
+          &.middle {height: 50%; top:25%;}
+          &.bottom {height: 25%; top: 75%;}
+          &.ui-droppable { .bgcolor(fade(@c_Hilight1,50));
+            display: block; opacity: 0;
+            &.hover {
+              opacity: 1;
+            }
+          }
+        }
+
+
+        span.labels {display: block; padding:3px 3px 3px 3px; .bgcolor(@c_Gray7); width: auto; height:47px; float: left; width: 120px;
+          img {display: block; cursor:move; position: absolute; top: 5px; left: 0;}
+          span {display:block; margin-bottom: 1px; white-space: nowrap; clear:both; float: left; width:auto;
+            &:hover {text-decoration: underline; cursor: pointer}
+          }
+          span.pageID{ display: block; font-size: 12px; .bold; }
+          span.pageTitle, span.menuTitle {font-size: 11px;}
+
+          input {display: block; font-size: 12px; font-weight: bold; padding: 0; margin: 0; border: @c_Gray2 1px solid; width: 110px; margin-bottom:-1px;}
+        }
+
+        span.visibility{display:block; padding:3px; height:47px; border-left: 1px solid @c_Gray5; position: absolute; right: 21px; top: 0;
+          a.menuGroup1 {.bgpos(-17px, -14px)}
+          a.menuGroup1.on {.bgpos(-17px, 0px)}
+          a.menuGroup2 {.bgpos(-32px, -14px)}
+          a.menuGroup2.on {.bgpos(-32px, 0px)}
+          a.menuGroup3 {.bgpos(-47px, -14px)}
+          a.menuGroup3.on {.bgpos(-47px, 0px)}
+        }
+
+        span.behaviour {display:block; padding:3px; height:47px; border-left: 1px solid @c_Gray5; position: absolute; right: 41px; top: 0;
+          a.home {display: block; width: 16px; height: 13px; .bgposY(-14px);}
+          a.home.on {.bgposY(0px);}
+          a.cache {display: block; width: 16px; height: 13px; .bgpos(-106px, -14px);}
+          a.cache.on {.bgpos(-106px, 0px)}
+          a.track {display: block; width: 16px; height: 13px; .bgpos(-122px, -14px);}
+          a.track.on {.bgpos(-122px, 0px)}
+        }
+
+        span.connections{display:block; position: absolute; right: 0; top: 0; padding:3px; height:47px; border-left: 1px solid @c_Gray5;
+          a.active {.bgpos(-62px, -14px)}
+          a.active.on {.bgpos(-62px, 0px)}
+          a.rep {.bgpos(-77px, -14px)}
+          a.rep.on {.bgpos(-77px, 0px)}
+          a.link {.bgpos(-92px, -14px)}
+          a.link.on {.bgpos(-92px, 0px); position: relative;
+              span.extLink {display:block; position:absolute; width:auto; height: 13px; font-size: 10px; padding:3px 3px 3px 20px; top:-3px; left:25px; border:1px solid @c_Gray3; .roundCorners(2px); .bgcolor(@c_Gray6);  color:@c_Gray1; .dropShadow(0px, 1px, 2px, rgba(0,0,0,0.2));
+                  &:before {content:""; display: block; position: absolute; width: 6px; height: 1px; border-top: 1px solid @c_Gray3; left:-6px; top:9px;}
+                  &:after {content:""; display: block; position: absolute; width: 16px; height: 13px; .bgimg('pageStruct.png'); .bgposY(-14px); top:3px; left:2px;}
+              }
+          }
+        }
+
+        &:hover {border-color:@c_Hilight1; .bgcolor(@c_White);}
+        span.actions {display: none}
+      }
+      span.page.expectDrop{.bgcolor(@c_White); border:2px solid @c_Hilight1; margin: 0px 0px 6px 0px;
+        span.labels {.bgcolor(@c_White);}
+      }
+      span.page.expectDrop.hover {.bgcolor(@c_Hilight0);
+        span {.bgcolor(@c_Hilight0);}
+      }
+      span.page.selected {color:@c_White; .bgcolor(@c_Hilight1); border-color:@c_Black;
+        span {color:@c_White; .bgcolor(@c_Hilight1); border-color:@c_Black;}
+
+        span.actions {display:block; position:absolute; top:-1px; right:-86px; background-image:none; .bgcolor(@c_Hilight1); .dropShadow(0px, 1px, 2px, rgba(0,0,0,0.2)); border:1px solid @c_Gray3; .roundCorners(3px); padding:1px;
+
+            a.button {display:block; width:auto; padding:2px 6px;  .roundCorners(3px); cursor: pointer;  font-size: 10px; background-image:none; white-space: nowrap; margin:3px; position:relative;
+                &:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 1px solid @c_Gray3; .dropShadow (0px, 1px, 2px, rgba(0,0,0,0.5));}
+                &:hover {.bgcolor(@c_White); color:@c_Black; border: 1px solid @c_Hilight1;}
+                &:active {.dropShadow (0px, 0px, 2px, rgba(0,0,0,0.0)); position: relative; top:1px; border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Hilight1;}
+            }
+        }
+
+      }
+
+  }
+  li:last-child {margin-bottom: 0px;}
+
+  .ui-draggable-dragging{position: absolute; z-index:200000;
+      .extLink {display:none!important}
+      span.page {.dropShadow(10px, 20px, 6px, rgba(0,0,0,0.2));
+
+      }
+
+  }
+  .pagePlaceHolder{display: block; width: 500px; min-height:53px; .bgcolor(@c_Hilight0); .roundCorners(3px); border:@c_Hilight1 2px dotted; box-sizing: border-box; margin: 0;}
+}
+div.holder {position:relative; margin:@w_colGutter 0 0 @w_colGutter;
+  svg {position:absolute; top:0px; left:0px; z-index: 0;
+    .repCurve {stroke:@c_Hilight1; stroke-width:1; fill:none}
+    .repCurve_mark {stroke:@c_Hilight1; stroke-width:1; fill:@c_Hilight1}
+
+    .linkCurve {stroke:@c_Gray2; stroke-width:1; fill:none}
+    .linkCurve_mark {stroke:@c_Gray2; stroke-width:1; fill:@c_Gray2}
+
+    .tempRepCurve {stroke:@c_Hilight2; stroke-width:2; fill:none; stroke-dasharray:3,3}
+    .tempRepCurve_mark {stroke:@c_Hilight2; stroke-width:2; fill:@c_Hilight2}
+
+    .tempLinkCurve {stroke:@c_Gray1; stroke-width:2; fill:none; stroke-dasharray:3,3}
+    .tempLinkCurve_mark {stroke:@c_Gray1; stroke-width:2; fill:@c_Gray1}
+
+    #treeGroup {stroke:@c_Gray2; stroke-width:1; fill:none; stroke-dasharray:1,1;
+        .pageRect {stroke:@c_Gray2; stroke-width:1; fill:@c_Gray7; stroke-dasharray:3,3}
+    }
+  }
+}
+.ui-sortable-helper {height:auto!important}
+.ui-sortable-helper:after{content: ""; display: block; width: 0; height: 0; clear: both;}
+.ugly {outline: 2px solid #F00;}

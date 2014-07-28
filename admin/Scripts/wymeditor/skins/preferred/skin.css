@@ -1,0 +1,373 @@
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+html {
+  background-color: #FFFFFF;
+}
+body {
+  background-color: #FFFFFF;
+}
+.wym_skin_preferred {
+  display: block;
+  width: 650px;
+  border: 1px solid #969696;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+.wym_skin_preferred .wym_html {
+  position: absolute;
+}
+.wym_skin_preferred .wym_html h2 {
+  display: none;
+}
+.wym_skin_preferred .wym_html textarea {
+  border: none;
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.7);
+  max-height: 448px;
+  min-height: 200px;
+}
+.wym_skin_preferred .wym_status,
+.wym_skin_preferred .wym_area_left,
+.wym_skin_preferred .wym_area_right,
+.wym_skin_preferred .wym_area_bottom {
+  display: none;
+}
+.wym_skin_preferred .wym_area_top {
+  display: block;
+  width: 650px;
+  background-color: #FFFFFF;
+  height: 28px;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  position: absolute;
+}
+.wym_skin_preferred .wym_area_top .wym_tools {
+  display: block;
+  position: relative;
+}
+.wym_skin_preferred .wym_area_top .wym_tools h2 {
+  display: none;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul {
+  display: block;
+  margin: 3px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li {
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 0px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li a {
+  background: url(icons.png) no-repeat;
+  text-indent: -99999px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  font-weight: bold;
+  font-size: 0px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  text-align: center;
+  background-image: url(wymEditor.png);
+  -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  margin: 0;
+  padding: 0;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li a:link,
+.wym_skin_preferred .wym_area_top .wym_tools ul li a:visited {
+  color: #969696;
+  border: 1px solid #969696;
+  background-color: #f0f0f0;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li a:hover {
+  color: #969696;
+  border: 1px solid #8ebe2c;
+  background-color: #FFFFFF;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li a:active {
+  color: #000000;
+  background-color: #c8c8c8;
+  border: 1px solid ;
+  position: relative;
+  top: 1px;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0);
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_strong a {
+  background-position: 0px 0px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_emphasis a {
+  background-position: 0px -18px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_ordered_list a {
+  background-position: 0px -36px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_unordered_list a {
+  background-position: 0px -54px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_indent a {
+  background-position: 0px -90px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_outdent a {
+  background-position: 0px -72px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_undo a {
+  background-position: 0px -108px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_redo a {
+  background-position: 0px -126px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_link a {
+  background-position: 0px -144px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_my_link a {
+  background-position: 0px -144px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_unlink a {
+  background-position: 0px -162px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_image a {
+  background-position: 0px -180px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_table a {
+  background-position: 0px -270px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_my_table a {
+  background-position: 0px -270px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_paste a {
+  background-position: 0px -198px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_my_paste a {
+  background-position: 0px -198px;
+}
+.wym_skin_preferred .wym_area_top .wym_tools ul li.wym_tools_html a {
+  background-position: 0px -216px;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown {
+  cursor: pointer;
+  margin: 3px 3px 0px 0px !important;
+  padding: 0 !important;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown h2 {
+  display: block;
+  background-color: #f0f0f0;
+  border: 1px solid #969696;
+  color: #303030;
+  font-size: 12px;
+  padding: 2px;
+  margin: 0px;
+  height: 14px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  background-image: url(wymEditor.png);
+  background-repeat: no-repeat;
+  text-indent: 18px;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown ul {
+  display: none;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown:hover h2 {
+  background-color: #FFFFFF;
+  border: 1px solid #8ebe2c;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown:hover ul {
+  display: block;
+  position: absolute;
+  border: 1px solid #567911;
+  background-color: #FFFFFF;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  padding: 3px;
+  border-top: none;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown:hover ul li {
+  display: block;
+  padding: 1px 3px 2px 3px;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown:hover ul li a {
+  color: #303030;
+  font-weight: bold;
+  font-size: 11px;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown:hover ul li:hover {
+  background-color: #8ebe2c;
+  color: #FFFFFF;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown:hover ul li:hover a {
+  color: #FFFFFF;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown.wym_containers h2 {
+  background-position: 0px -234px;
+}
+.wym_skin_preferred .wym_area_top .wym_dropdown.wym_classes h2 {
+  background-position: 0px -252px;
+}
+.wym_skin_preferred .wym_area_main {
+  display: block;
+  width: 100%;
+  height: 450px;
+  margin-top: 28px;
+}
+.wym_skin_preferred .wym_area_main iframe {
+  display: block;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 450px;
+}
+.wym_skin_preferred:hover {
+  border: 1px solid #8ebe2c;
+}
+.wym_skin_preferred .wym_dialog div.row {
+  margin-bottom: 5px;
+}
+.wym_skin_preferred .wym_dialog div.row input {
+  margin-right: 5px;
+}
+.wym_skin_preferred .wym_dialog div.row label {
+  float: left;
+  width: 150px;
+  display: block;
+  text-align: right;
+  margin-right: 10px;
+}
+.wym_skin_preferred .wym_dialog div.row-indent {
+  padding-left: 160px;
+}
+.wym_skin_preferred .wym_dialog div.row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.wym_skin_preferred .wym_dialog div.row {
+  display: inline-block;
+}
+.wym_skin_preferred * html .wym_dialog div.row {
+  height: 1%;
+}
+.wym_skin_preferred .wym_dialog div.row {
+  display: block;
+}
+.wym_skin_preferred a.wym_wymeditor_link {
+  text-indent: -9999px;
+  float: right;
+  display: block;
+  width: 50px;
+  height: 15px;
+  background: url(../wymeditor_icon.png);
+  overflow: hidden;
+  text-decoration: none;
+}
+fieldset.col1 .wym_skin_preferred {
+  display: block;
+  width: 305px;
+  border: 1px solid #969696;
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top {
+  display: block;
+  width: 650px;
+  background-color: #FFFFFF;
+  height: 28px;
+  width: 305px;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  position: absolute;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_tools {
+  margin-right: 0px !important;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_dropdown {
+  cursor: pointer;
+  margin: 3px 2px 0px 0px !important;
+  padding: 0 !important;
+  width: 20px !important;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_dropdown h2 {
+  width: 18px;
+  height: 18px;
+  text-indent: -999999px;
+  padding: 0;
+  margin: 0;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_dropdown :hover ul {
+  display: block;
+  position: absolute;
+  right: 0px;
+  border: 1px solid #567911;
+  background-color: #FFFFFF;
+  -moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+  padding: 3px;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_dropdown :hover ul li {
+  display: block;
+  padding: 1px 3px 2px 3px;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_dropdown :hover ul li a {
+  color: #303030;
+  font-weight: bold;
+  font-size: 11px;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_dropdown :hover ul li :hover {
+  background-color: #8ebe2c;
+  color: #FFFFFF;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_top .wym_dropdown :hover ul li :hover a {
+  color: #FFFFFF;
+}
+fieldset.col1 .wym_skin_preferred .wym_html {
+  position: absolute;
+}
+fieldset.col1 .wym_skin_preferred .wym_html h2 {
+  display: none;
+}
+fieldset.col1 .wym_skin_preferred .wym_html textarea {
+  width: 305px;
+  border: none;
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.7);
+  max-height: 448px;
+  min-height: 200px;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_main {
+  display: block;
+  width: 100%;
+  height: 300px;
+  margin-top: 28px;
+}
+fieldset.col1 .wym_skin_preferred .wym_area_main iframe {
+  display: block;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 300px;
+}

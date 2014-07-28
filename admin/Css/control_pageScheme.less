@@ -1,0 +1,69 @@
+@import 'common';
+@w_miniCol:130px;
+@w_miniPad:15px;
+@w_miniColW:130px;
+
+ul.fieldList {display: block; width: 100%; margin-bottom:10px; clear:both; font-size:13px;
+	&:after {content:""; display: block; clear:both;}
+	li {display: block; float: none; clear:both; padding-bottom: 2px; padding-top:0px; position: relative; .bgcolor(@c_Gray6); .roundCorners(2px); margin-bottom:5px; .dropShadow(0px,1px,2px,fade(@c_Black,50)); cursor:move;
+		&:after {content:""; display: block; clear:both;}
+		a.close, a.dragHandle {display:none;}
+		//a.dragHandle, a.close{display:none;}
+		fieldset.first {padding-left:0px!important; margin-left:0px!important; clear: both;}
+
+      fieldset {display:block; float:left; margin-top:3px;
+          label {display:block;  float:none;  width: @w_miniCol; margin-bottom: 4px; margin-top: 4px; margin-left:@w_miniPad/2; float:left;
+              input[type=text], {display: block; width: @w_miniColW - 2*@d_controlPadding; padding:@d_controlPadding;}
+          }
+          fieldset.customList {margin: 0; padding-left: 0!important; padding-top:5px;
+              select {margin-bottom: 5px;}
+              input {display: block; float:left; clear:none; width: 70px; margin-right: 3px;}
+
+          }
+          a.tool {text-indent: -99999px; display:block; margin:18px 0px 0px 1px; float: left; width: 23px; height:23px; .bold; font-size: 0px; .roundCorners(2px); text-align: center; .bgimg('pageSchemeToolbar.png');  .dropShadow (0px, 1px, 1px, rgba(0,0,0,0.3));
+            &:link, &:visited {color:@c_Gray3; border: 1px solid @c_Gray3;  .bgcolor(@c_Gray6);}
+            &:hover { color:@c_Gray3; border: 1px solid @c_Hilight1;  .bgcolor(@c_White);}
+            &:active, &.on { color:@c_Black; .bgcolor(@c_Gray4); border: 1px solid @c_Highlight1; position:relative; top:1px;  .dropShadow (0px, 2px, 2px, rgba(0,0,0,0));}
+          }
+
+          a.tool.visibility {margin-left: 6px; margin-right: 6px; .bgposX(-23px);
+            &.on {.bgposX(0px)}
+          }
+
+          a.tool.lock_admin {.bgposX(-69px)}
+          a.tool.lock_user {.bgposX(-46px)}
+      }
+
+      fieldset.options {.bgcolor(@c_Gray5); .innerShadow(0px,1px,3px,fade(@c_Black,20)); float:none; clear:both; margin:4px; .roundCorners(1px); display:none; width: auto; .bgcolor(fade(@c_Black,5));
+        label {margin: 2px 4px; width: auto;}
+      }
+
+	  &.selected{
+         fieldset.options { display: block;}
+	  }
+      &:hover {.bgcolor(@c_Hover);
+        a.close {display:block; width: 17px; height:17px; position: absolute; right:2px; top:2px; .bold; .bgcolor(@c_White); font-size: 15px; .roundCorners(2px); text-align: center; opacity: 0.5; color:@c_Gray3; border: 1px solid @c_Gray3; cursor: pointer; line-height: 13px; .f_Tahoma; z-index:200;
+          &:hover {opacity: 1; color:@c_Gray3; border: 1px solid @c_Hilight1;}
+          &:active {opacity: 1; color:@c_Black; .bgcolor(@c_Gray4); border: 1px solid @c_Highlight1; top:3px;}
+          &:after {content:"x"; position:absolute; left:4px;}
+        }
+      }
+
+
+
+	}
+	
+	li.ui-sortable-helper{border:1px solid @c_Hilight1; .dropShadow (0px, 2px, 5px, rgba(0,0,0,0.4)); padding-top:6px;
+		
+	}
+	
+}
+
+
+
+a.addField {display:block; float:right; width:auto;  padding:4px 14px;  .roundCorners(3px); cursor: pointer;  font-size: 13px; height: 20px; line-height: 20px; margin-bottom:20px;
+	&:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 1px solid @c_Gray3; .dropShadow (0px, 3px, 3px, rgba(0,0,0,0.5)); margin-right: 10px;}
+	&:hover {.bgcolor(@c_White); color:@c_Black; border: 1px solid @c_Hilight1;}
+	&:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); position: relative; top:2px; border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+}
+

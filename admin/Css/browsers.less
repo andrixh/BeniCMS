@@ -1,0 +1,168 @@
+@import 'common';
+
+div.browserBar {display: block; position: absolute; bottom: 0px; right:5px; width:auto; height:35px;
+	a {display: block; float:left; width:24px; height:24px; .bgimg('browserBar.png'); .no-repeat; text-indent: -99999px; .roundCorners(3px); cursor: pointer;  font-size: 16px; .bold; padding:2px; 
+		&:link, &:visited {.bgcolor(@c_Gray6); color:@c_Gray2; border: 1px solid @c_Gray3; .dropShadow (0px, 2px, 2px, rgba(0,0,0,0.3)); margin-right: 4px;}
+		&:hover {.bgcolor(@c_White); color:@c_Black; border: 1px solid @c_Hilight1;}
+		&:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); position: relative; top:2px; border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+	}
+	a.selected {
+		&:link, &:visited, &:hover, &:active {.bgcolor(@c_Gray5); width: auto; text-indent:26px; .f_Tahoma; padding-right:6px; font-size: 13px; font-weight: normal; color:@c_Black; .roundCorners(0px); .roundCornersTL(3px); .roundCornersTR(3px); line-height:22px; border:1px solid @c_Gray3; padding-bottom:7px; padding-top:4px; top:0px; .innerShadow (0px, 2px, 1px, rgba(0,0,0,0.3)); border-bottom:none; z-index: 10001;}
+	}
+	a.imageBrowse{.bgpos(2px,2px)}
+	a.fileBrowse{.bgpos(2px,-34px)}
+	a.videoBrowse{.bgpos(2px,-70px)}
+    a.componentBrowse{.bgpos(2px,-142px)}
+    a.contentBrowse{.bgpos(2px,-178px)}
+    a.pageTypeBrowse{.bgpos(2px,-106px)}
+}
+
+div.browserBar.static { position: fixed; top:0px; right:0px; padding-right:5px; .bgcolor(@c_White); .dropShadow (0px, 2px, 2px, rgba(0,0,0,0.2)); height:37px; padding-left:5px; z-index: 10000;}
+
+div.browser{display: block; .bgcolor(@c_White); position:absolute; right:0px; top:42px; padding: 0; height: 500px; width:306px; border-left: 1px solid @c_Gray3; border-bottom: 1px solid @c_Gray3; z-index: 10000; .dropShadow (-2px, 4px, 3px, rgba(0,0,0,0.6)); .f_Tahoma;
+	div.searchBox{.bgcolor(@c_Gray5); padding:5px; border-bottom: 1px solid @c_Gray4; overflow:hidden;
+		label { font-size: 13px; display:block; float:left;
+			span {margin-right: 5px;}
+			input {.controlBorder; padding:@d_controlPadding;  width: 220px;
+				&:hover, &:focus {.activeBorder;}
+			}
+		}
+        a.btn_refresh{display:block; float: left; width:16px; height: 16px; .hideText(); .bgimg('refresh.png'); .bgpos(1px,1px); .no-repeat; .roundCorners(2px); cursor: pointer;  font-size: 16px; padding:2px; margin-left:3px;
+            &:link, &:visited {.bgcolor(@c_Gray6); border: 1px solid @c_Gray3; .dropShadow (0px, 2px, 2px, rgba(0,0,0,0.3));}
+            &:hover {.bgcolor(@c_White); border: 1px solid @c_Hilight1;}
+            &:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); position: relative; top:1px; border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+        }
+	}
+	ul#imageContents {display: block; width: 100%; min-height:200px; .innerShadow (0px, 1px, 1px, rgba(0,0,0,0.3)); .bgcolor(@c_Gray4) ;overflow: scroll;
+		li {display: block; float: left; width: 50px; height: 50px; margin: 5px 0px 0px 5px; border: 1px solid @c_Black; .bgcolor(@c_White); .dropShadow (0px, 1px, 2px, rgba(0,0,0,0.6)); cursor:pointer;}
+		li.ui-draggable-dragging {border: 4px solid @c_Hilight1; margin:0px;  .dropShadow (2px, 10px, 5px, rgba(0,0,0,0.3))}
+	}
+
+	ul#videoContents {display: block; width: 100%; min-height:200px; .innerShadow (0px, 1px, 1px, rgba(0,0,0,0.3)); .bgcolor(@c_Gray4) ;overflow: scroll;
+		li {display: block; position: relative; float: left; width: 50px; height: 50px; margin: 5px 0px 0px 5px; border: 1px solid @c_Black; .bgcolor(@c_White); .dropShadow (0px, 1px, 2px, rgba(0,0,0,0.6)); cursor:pointer;
+			&:before {display: block; content: ""; width:15px; height: 17px; position: absolute; bottom: 3px; left:3px; .bgimg('videoOverlay.png');}
+
+			&:after {content: ""; width: 16px; height: 16px; display: block; position: absolute; bottom:3px; right:3px;}
+			&.youtube:after {.bgimg('VideoServices/youtube.png');}
+			&.vimeo:after {.bgimg('VideoServices/vimeo.png');}
+			&.dailymotion:after {.bgimg('VideoServices/dailymotion.png');}
+		}
+		li.ui-draggable-dragging {border: 4px solid @c_Hilight1; margin:0px;  .dropShadow (2px, 10px, 5px, rgba(0,0,0,0.3))}
+	}
+
+	ul#fileContents {display: block; width: 100%; min-height:200px; .innerShadow (0px, 1px, 1px, rgba(0,0,0,0.3)); .bgcolor(@c_Gray4) ;overflow: scroll;
+      li {display: block; .roundCorners(2px); margin: 3px 3px 0px 3px; border: 1px solid @c_Gray3; .bgcolor(@c_Gray6); .dropShadow (0px, 1px, 2px, fade(@c_Black,30)); cursor:pointer; padding: 2px; overflow:hidden; text-overflow:ellipsis; font-size:12px;
+			img {display: block; float:left; margin:2px;}
+			span.fileName {font-size:12px;display: inline;  margin-right: 5px; margin-top: 2px; word-break: break-all;}
+            &:hover {.bgcolor(@c_White);}
+		}
+		li.ui-draggable-dragging {border: 4px solid @c_Hilight1; margin:0px;  .dropShadow (2px, 10px, 5px, rgba(0,0,0,0.3)); .bgcolor(@c_White);}
+	}
+
+
+
+    ul#pageTypeContents {
+      li {display: block; .roundCorners(2px); margin: 3px 3px 0px 3px; border: 1px solid @c_Gray3; .bgcolor(@c_Gray6); .dropShadow (0px, 1px, 2px, fade(@c_Black,30)); cursor:pointer; padding: 2px; overflow:hidden; text-overflow:ellipsis; font-size:12px;
+        img {display: block; float:left; margin:2px;}
+        span.pageTypeName {font-size:12px;display: block;  margin-right: 5px; margin-top: 2px; word-break: break-all;}
+        span.pageTypeComment {font-size:10px; display: block;  margin-right: 5px; margin-top: 2px; word-break: break-all;}
+        &:hover {.bgcolor(@c_White);}
+      }
+      li.ui-draggable-dragging {border: 4px solid @c_Hilight1; margin:0px;  .dropShadow (2px, 10px, 5px, rgba(0,0,0,0.3)); .bgcolor(@c_White);}
+    }
+
+    ul#componentContents, ul#contentContents {display: block; width: 100%; min-height:200px; .innerShadow (0px, 1px, 1px, rgba(0,0,0,0.3)); .bgcolor(@c_Gray4) ;overflow-y: scroll;
+      li {display: block; .roundCorners(2px); margin: 3px 3px 0px 3px; border: 1px solid @c_Gray3; .bgcolor(@c_Gray6); .dropShadow (0px, 1px, 2px, fade(@c_Black,30)); cursor:pointer; padding: 2px; overflow:hidden; text-overflow:ellipsis; font-size:12px;
+        &:hover {.bgcolor(@c_White);}
+        img {display: block; float:left; margin:2px;}
+        h1,h2,h3,p {padding: 0px; text-indent: 0px; margin:0px; line-height: auto;}
+        h1 {.bold; font-size: 13px; color:@c_Black;}
+        h2 {.bold; .italic; font-size: 11px; color:@c_Gray1;}
+        h3 {.italic; font-size: 11px; color:@c_Gray2;}
+        p {font-size: 10px;@c_Gray3}
+        b, strong {.bold;}
+        em, i {.italic;}
+        span.fileName {font-size:12px;display: inline;  margin-right: 5px; margin-top: 2px; word-break: break-all;}
+      }
+      li.ui-draggable-dragging {border: 4px solid @c_Hilight1; margin:0px;  .dropShadow (2px, 10px, 5px, rgba(0,0,0,0.3)); .bgcolor(@c_White);}
+    }
+	
+	div.nav{display: block; .bgcolor(@c_Gray5); padding:5px; border-top: 1px solid @c_Gray4; height:20px;
+		div.pageSize {float:right; margin-left:5px; font-size:12px;}
+		div.pageNav {float:left; margin-left:5px; font-size:12px;}
+		div.pageSize, div.pageNav {
+			input {.controlBorder; padding:@d_controlPadding;  width: 20px; display: block; float: left; margin-right:5px;
+				&:hover, &:focus {.activeBorder;}
+			}
+			p {display: block; float: left; line-height:18px; color: @c_Gray2; margin:0px 5px 0px 0px; text-indent: 0px;
+				span.currentPage {color:@c_Black;}
+			}
+			a {
+				&:link, &:visited {display: block; float: left; padding:1px 2px; .bgcolor(@c_White); border-color: @c_Gray5; border-style: solid; border-width:1px 0px 1px 1px; color:@c_Gray2; font-size:11px; position: relative; .dropShadow (0px, 1px, 1px, rgba(0,0,0,0.3));}
+				&:hover {.bgcolor(@c_Hilight1); color:@c_White;}
+			  	&:active {.bgcolor(@c_Hilight1); color:@c_White; top:1px;}
+			}
+			a.current { 
+				&:link, :visited, :active {.bgcolor(@c_Gray3); color:@c_White;}
+			 	&:hover {.bgcolor(@c_Hilight1); color:@c_White;}
+			}
+			a.disabled {
+				&:link, &:visited, &:hover, &:active {.bgcolor(transparent); color:@c_Gray4; cursor: default;}
+			}
+		}
+
+	}
+}
+
+div.browser.static {position:fixed; top:32px; z-index: 10000}
+
+div.imageView{display: block; position: absolute; .bgcolor(@c_White); .dropShadow (1px, 1px, 5px, rgba(0,0,0,0.7)); z-index:15000; border:5px solid @c_White; .roundCornersTL(5px); .roundCornersBR(5px); .roundCornersBL(5px); max-width: 200px;
+	&:after {content:""; display: block; .bgimg('imgPointerR.png'); .no-repeat; width:14px; height: 14px; position: absolute; top:-10px; right: -9px;}
+	img {.bgimg('transpBG.gif'); display: block; float: right;}
+	p {.f_Verdana; font-size: 10px; display: inline; color:@c_Gray3; line-height: 12px;}
+}
+div.videoView{display: block; position: absolute; .bgcolor(@c_White); .dropShadow (1px, 1px, 5px, rgba(0,0,0,0.7)); z-index:15000; border:5px solid @c_White; .roundCornersTL(5px); .roundCornersBR(5px); .roundCornersBL(5px); max-width: 200px;
+	&:after {content:""; display: block; .bgimg('imgPointerR.png'); .no-repeat; width:14px; height: 14px; position: absolute; top:-10px; right: -9px;}
+	img {.bgimg('transpBG.gif'); display: block; float: right;}
+	p {.f_Verdana; font-size: 10px; display: inline; color:@c_Gray3; line-height: 12px;}
+}
+
+div.componentsBrowser {
+  div.searchBox { padding-bottom:0px;
+    div.filters {clear:both; padding-top:2px;
+
+
+      a.filter {display:block; float: left; height: 16px; .bgpos(2px,2px); .no-repeat; cursor: pointer;   padding:2px; margin-right:3px; padding-left:22px; font-size:11px; margin-bottom:3px;
+        &:link, &:visited {.bgcolor(@c_Gray6); border: 1px solid @c_Gray3; .dropShadow (0px, 2px, 2px, rgba(0,0,0,0.3)); color: @c_Black;}
+        &:hover {.bgcolor(@c_White); border: 1px solid @c_Hilight1;}
+        &:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+      }
+      a.filter.selected {display:block; float: left; height: 16px; .bgpos(2px,2px); .no-repeat; .roundCorners(2px); cursor: pointer;  padding:2px; margin-right:3px; padding-left:22px; font-size:11px;
+        &:link, &:visited {.innerShadow (0px, 1px, 2px, rgba(0,0,0,0.3)); position: relative; top:1px; border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+        &:hover {.bgcolor(@c_White); border: 1px solid @c_Hilight1;}
+        &:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+      }
+
+      a.filter:last-child:after {content: ""; display: block; width: 0px; height: 0px; clear:both};
+    }
+  }
+}
+
+div.contentsBrowser {
+  div.searchBox { padding-bottom:0px;
+    div.filters {clear:both; padding-top:2px;
+      a.filter {display:block; float: left; height: 16px; .bgpos(2px,2px); .no-repeat; cursor: pointer;   padding:2px; margin-right:3px; padding-left:22px; font-size:11px; margin-bottom:3px;
+        &:link, &:visited {.bgcolor(@c_Gray6); border: 1px solid @c_Gray3; .dropShadow (0px, 2px, 2px, rgba(0,0,0,0.3));}
+        &:hover {.bgcolor(@c_White); border: 1px solid @c_Hilight1;}
+        &:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+      }
+      a.filter.selected {display:block; float: left; height: 16px; .bgpos(2px,2px); .no-repeat; .roundCorners(2px); cursor: pointer;  padding:2px; margin-right:3px; padding-left:22px; font-size:11px;
+        &:link, &:visited {.innerShadow (0px, 1px, 2px, rgba(0,0,0,0.3)); position: relative; top:1px; border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+        &:hover {.bgcolor(@c_White); border: 1px solid @c_Hilight1;}
+        &:active {.dropShadow (0px, 2px, 3px, rgba(0,0,0,0.0)); border: 1px solid @c_Hilight2; .bgcolor(@c_Gray5); color: @c_Black;}
+      }
+
+      a.filter:last-child:after {content: ""; display: block; width: 0px; height: 0px; clear:both};
+    }
+  }
+}
